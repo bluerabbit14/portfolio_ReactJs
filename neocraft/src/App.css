@@ -1,0 +1,18 @@
+/* App Styles */
+.App {
+  text-align: center;
+}
+
+/* Remove horizontal scrollbar only */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Prevent text selection on all elements */
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
