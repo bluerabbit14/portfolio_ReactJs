@@ -1,0 +1,97 @@
+/* Quote Footer Styles */
+.quote-footer {
+    margin-top: 10px;
+    padding: 40px 0;
+  }
+  
+  .quote-footer-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    padding: 10px;
+    animation: infiniteQueue 40s linear infinite;
+    width: max-content;
+    transform: translateX(0%);
+  }
+  
+  @keyframes infiniteQueue {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .quote-footer-content:hover {
+    animation-play-state: paused;
+  }
+  
+  .footer-image {
+    width: 144px;
+    height: 144px;
+    object-fit: contain;
+    border-radius: 8px;
+    user-select: none;
+    transition: transform 0.3s ease;
+    filter: grayscale(100%);
+  }
+  
+  .footer-image:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .quote-text {
+      font-size: 60px;
+      letter-spacing: -1px;
+    }
+    
+    .quote-section {
+      padding: 60px 0;
+      min-height: 40vh;
+    }
+    
+    .quote-footer-content {
+      gap: 30px;
+      flex-wrap: nowrap;
+      animation: infiniteQueue 15s linear infinite;
+    }
+    
+    .footer-image {
+      width: 108px;
+      height: 108px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .quote-text {
+      font-size: 40px;
+      letter-spacing: -0.5px;
+    }
+    
+    .quote-section {
+      padding: 40px 0;
+      min-height: 30vh;
+    }
+    
+    .quote-footer {
+      margin-top: 40px;
+      padding: 30px 0;
+    }
+    
+    .quote-footer-content {
+      gap: 20px;
+      flex-wrap: nowrap;
+      animation: infiniteQueue 12s linear infinite;
+    }
+    
+    .footer-image {
+      width: 90px;
+      height: 90px;
+    }
+  }
+  

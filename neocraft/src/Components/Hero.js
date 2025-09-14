@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import './Hero.css'
 
 export default function Hero() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(true)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -26,11 +26,7 @@ export default function Hero() {
       >
         <div className="navbar-container">
           {/* Logo */}
-          <motion.div 
-            className="navbar-logo"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
+          <motion.div className="navbar-logo">
             <a href="/">NeoCraft</a>
           </motion.div>
 
@@ -74,62 +70,31 @@ export default function Hero() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             
-            <motion.li 
-              className="nav-item"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
+            <motion.li className="nav-item">
               <a 
                 href="#about" 
                 className="nav-link" 
-                onClick={(e) => {
-                  e.preventDefault()
-                  setIsMenuOpen(false)
-                  const aboutSection = document.getElementById('about')
-                  if (aboutSection) {
-                    aboutSection.scrollIntoView({ 
-                      behavior: 'smooth',
-                      block: 'start'
-                    })
-                  }
-                }}
-              >
+                onClick={() => setIsMenuOpen(false)}>
                 About
               </a>
             </motion.li>
-            <motion.li 
-              className="nav-item"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <a href="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <motion.li className="nav-item">
+              <a href="#projects" className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Projects
               </a>
             </motion.li>
-            <motion.li 
-              className="nav-item"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <a href="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <motion.li className="nav-item">
+              <a href="#skills" className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Skills
               </a>
             </motion.li>
-            <motion.li 
-              className="nav-item"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <a href="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <motion.li className="nav-item">
+              <a href="#experience" className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Experience
               </a>
             </motion.li>
-            <motion.li 
-              className="nav-item"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <a href="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <motion.li className="nav-item">
+              <a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Contact
               </a>
             </motion.li>
@@ -242,14 +207,30 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right side - Empty space for future content */}
+          {/* Right side - Greek Figure Image */}
           <motion.div 
             className="hero-right"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
           >
-            {/* Future content will go here */}
+            <motion.div 
+              className="hero-image-container"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.0, delay: 0.8, ease: "easeOut" }}
+            >
+              <img 
+                src="/Assets/greekfigure.png" 
+                alt="Greek Figure" 
+                className="hero-image"
+              />
+              <text className="hero-image-text">
+                "hello world, I'm Abbas and I'm a software engineer and a dreamer
+                I'm a software engineer and a dreamer"
+              </text>
+          
+            </motion.div>
           </motion.div>
         </div>
       </motion.div>

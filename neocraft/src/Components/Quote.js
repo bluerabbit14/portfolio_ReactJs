@@ -41,19 +41,22 @@ export default function Quote() {
 
   const getWordVariants = (index) => ({
     hidden: { 
-      y: 100, 
+      y: 150, 
       opacity: 0,
-      scale: 0.3,
-      rotateX: 45
+      rotateX: 90,
+      transformOrigin: "bottom"
     },
     visible: { 
       y: 0, 
       opacity: 1,
-      scale: 1,
       rotateX: 0,
+      transformOrigin: "bottom",
       transition: {
-        duration: 0.8,
-        ease: "easeOut"
+        duration: 1.2,
+        ease: "easeOut",
+        type: "spring",
+        stiffness: 100,
+        damping: 15
       }
     }
   })
@@ -109,21 +112,7 @@ export default function Quote() {
             FUTURE
           </motion.span>
         </motion.h1>
-        
-        {/* Footer-like section for images */}
-        <div className="quote-footer">
-          <div className="quote-footer-content">
-            <div className="image-placeholder">
-              <span>Your Image Element</span>
-            </div>
-            <div className="image-placeholder">
-              <span>Your Image Element</span>
-            </div>
-            <div className="image-placeholder">
-              <span>Your Image Element</span>
-            </div>
-          </div>
-        </div>
+    
       </div>
     </motion.div>
   )

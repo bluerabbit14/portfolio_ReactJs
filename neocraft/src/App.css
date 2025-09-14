@@ -3,10 +3,17 @@
   text-align: center;
 }
 
-/* Remove horizontal scrollbar only */
+/* Remove scrollbars */
 html, body {
   overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
 }
 
 /* Prevent text selection on all elements */
