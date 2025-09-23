@@ -58,16 +58,13 @@ export default function Navbar() {
 
         {/* Navigation Links - Right Side */}
         <div className="navbar-links">
-          <a href="#about" onClick={() => scrollToSection('about')} className="navbar-link">
-            About
-          </a>
           <a href="#projects" onClick={() => scrollToSection('projects')} className="navbar-link">
             Projects
           </a>
-          <a href="#skills" onClick={() => scrollToSection('skills')} className="navbar-link">
-            Skills
+          <a href="#about" onClick={() => scrollToSection('about')} className="navbar-link">
+            About
           </a>
-          <a href="#contact" onClick={() => scrollToSection('contact')} className="navbar-link">
+          <a href="#contact" onClick={() => scrollToSection('contact')} className="navbar-link contact-btn">
             Contact
           </a>
         </div>
@@ -82,14 +79,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
-        <a href="#about" onClick={() => scrollToSection('about')} className="mobile-link">
-          About
-        </a>
         <a href="#projects" onClick={() => scrollToSection('projects')} className="mobile-link">
           Projects
         </a>
-        <a href="#skills" onClick={() => scrollToSection('skills')} className="mobile-link">
-          Skills
+        <a href="#about" onClick={() => scrollToSection('about')} className="mobile-link">
+          About
         </a>
         <a href="#contact" onClick={() => scrollToSection('contact')} className="mobile-link">
           Contact

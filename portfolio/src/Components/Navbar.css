@@ -4,23 +4,18 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
 .navbar.scrolling {
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+  background-color: transparent;
   transition: all 0.2s ease;
 }
 
 .navbar-container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -29,7 +24,7 @@
   height: 63px;
 }
 
-/* Portfolio Brand - Left Side */
+/* Brand - Left Side */
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -37,7 +32,7 @@
 
 .brand-link {
   text-decoration: none;
-  color: #333;
+  color: #000000;
   font-weight: 700;
   font-size: 24px;
   transition: color 0.3s ease;
@@ -49,7 +44,8 @@
 }
 
 .brand-link:hover {
-  color: #007bff;
+  scale: 1.05;
+  transition: all 0.4s ease;
 }
 
 /* Navigation Links - Right Side */
@@ -61,7 +57,7 @@
 
 .navbar-link {
   text-decoration: none;
-  color: #333;
+  color: #000000;
   font-weight: 500;
   font-size: 16px;
   transition: color 0.3s ease;
@@ -74,7 +70,7 @@
 }
 
 .navbar-link:hover {
-  color: #007bff;
+  color: #000000;
 }
 
 .navbar-link::after {
@@ -84,12 +80,31 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #007bff;
+  background-color: #000000;
   transition: width 0.3s ease;
 }
 
 .navbar-link:hover::after {
   width: 100%;
+}
+
+.navbar-link.contact-btn {
+  background-color: #007bff;
+  color: #ffffff !important;
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 2px solid #007bff;
+  transition: all 0.3s ease;
+}
+
+.navbar-link.contact-btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.navbar-link.contact-btn::after {
+  display: none;
 }
 
 
@@ -108,7 +123,7 @@
 .hamburger {
   width: 25px;
   height: 3px;
-  background-color: #333;
+  background-color: #000000;
   margin: 3px 0;
   transition: 0.3s;
   border-radius: 2px;
@@ -154,7 +169,7 @@
 
 .mobile-link {
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
   font-weight: 500;
   font-size: 18px;
   padding: 15px 0;
@@ -172,7 +187,7 @@
 }
 
 .mobile-link:hover {
-  color: #007bff;
+  color: #000000;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   padding-left: 10px;
