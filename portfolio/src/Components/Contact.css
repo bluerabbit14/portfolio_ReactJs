@@ -1,0 +1,160 @@
+/* Contact Section Styles */
+.contact {
+  background-color: rgba(255, 240, 222,0.3);
+  color: #333;
+  padding: 50px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Left Section - Contact Details */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+  max-width: 700px;
+}
+
+.contact-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  font-family: 'Handwriting', cursive;
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+}
+
+.contact-response-time {
+  font-size: 1rem;
+  color: #888;
+  margin: 10px 0 0 0;
+  font-style: italic;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.contact-separator {
+  color: #ccc;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0 10px;
+  align-self: center;
+}
+
+.contact-icon {
+  color: #333;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.contact-icon:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+.contact-value {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 400;
+}
+
+/* Call to Action Button */
+.cta-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.cta-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button:hover {
+  
+}
+
+.contact-placeholder {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 2px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2.5rem;
+  }
+  
+  .contact {
+    padding: 80px 20px;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .contact {
+    padding: 60px 20px;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

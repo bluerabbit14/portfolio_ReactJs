@@ -1,0 +1,140 @@
+/* Vertical Scroll Component - Car Collection */
+.vertical-scroll {
+  padding: 20px 0px;
+  background-color: #000000;
+}
+
+.vertical-scroll-container {
+  padding: 0 60px;
+}
+
+
+/* 4 Column Grid */
+.columns-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Car Column */
+.car-column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Car List - Vertical Layout */
+.car-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Car Card - Portrait Orientation */
+.car-card {
+  background-color: #111111;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 500px;
+  position: relative;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  border-color: #555;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Car Image - Cover whole card */
+.car-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.car-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover .car-image img {
+  transform: scale(1.05);
+}
+
+/* Car Info - Hidden */
+.car-info {
+  display: none;
+}
+
+.car-name {
+  display: none;
+}
+
+.car-year {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .columns-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .car-card {
+    width: 180px;
+    height: 270px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .columns-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  
+  .car-card {
+    width: 160px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vertical-scroll {
+    padding: 60px 0;
+  }
+  
+  .vertical-scroll-container {
+    padding: 0 15px;
+  }
+  
+  .columns-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  
+  .car-card {
+    width: 200px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  
+  .car-card {
+    width: 180px;
+    height: 270px;
+  }
+}

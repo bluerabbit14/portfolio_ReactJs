@@ -5,13 +5,14 @@
   left: 0;
   right: 0;
   background-color: transparent;
+  backdrop-filter: none;
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
 .navbar.scrolling {
   background-color: transparent;
-  transition: all 0.2s ease;
+  backdrop-filter: none;
 }
 
 .navbar-container {
@@ -92,15 +93,13 @@
   background-color: #007bff;
   color: #ffffff !important;
   padding: 8px 20px;
-  border-radius: 25px;
+  border-radius: 18px;
   border: 2px solid #007bff;
   transition: all 0.3s ease;
 }
 
 .navbar-link.contact-btn:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-  transform: translateY(-2px);
+  
 }
 
 .navbar-link.contact-btn::after {
