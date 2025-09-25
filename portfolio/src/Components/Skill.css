@@ -25,7 +25,7 @@
 .skill-heading {
   font-size: 4rem;
   font-weight: 700;
-  color: #333;
+  color: rgba(0, 0, 0,1);
   margin: 0;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -34,7 +34,7 @@
 .skill-line {
   width: 100px;
   height: 2px;
-  background-color: #333;
+  background-color: rgba(0, 0, 0,1);
   margin-top: 20px;
 }
 

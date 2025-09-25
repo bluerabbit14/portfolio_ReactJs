@@ -1,30 +1,9 @@
 import React, { useState } from 'react'
+import GetInTouchForm from './GetInTouchForm'
 import './Contact.css'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Create mailto link with form data
-    const subject = encodeURIComponent(formData.subject)
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )
-    window.location.href = `mailto:14asifer7@gmail.com?subject=${subject}&body=${body}`
-  }
+  const [showGetInTouch, setShowGetInTouch] = useState(false)
 
   return (
     <section id="contact" className="contact">
@@ -41,7 +20,7 @@ export default function Contact() {
               <div className="contact-icon">
                 <i className="fas fa-envelope"></i>
               </div>
-              <span className="contact-value">14asifer7@gmail.com</span>
+              <span className="contact-value">14asifcr7@gmail.com</span>
             </div>
             <div className="contact-separator">|</div>
             <div className="contact-item">
@@ -61,7 +40,7 @@ export default function Contact() {
 
           {/* Call to Action Button */}
           <div className="cta-section">
-            <button className="cta-button" onClick={() => {}}>
+            <button className="cta-button" onClick={() => setShowGetInTouch(true)}>
               Let's Work Together
             </button>
           </div>
@@ -73,6 +52,12 @@ export default function Contact() {
         </div>
 
       </div>
+
+      {/* GetInTouch Form Modal */}
+      <GetInTouchForm 
+        isOpen={showGetInTouch} 
+        onClose={() => setShowGetInTouch(false)} 
+      />
     </section>
   )
 }

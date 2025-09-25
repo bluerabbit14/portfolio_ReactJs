@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.css'
 
-export default function Navbar() {
+export default function Navbar({ isScrolling, onShowGetInTouch }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolling, setIsScrolling] = useState(false)
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -23,44 +20,9 @@ export default function Navbar() {
     }
   }
 
-  useEffect(() => {
-    let scrollTimeout
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      
-      // Show navbar when at top of page
-      if (currentScrollY < 10) {
-        setIsVisible(true)
-        setIsScrolling(false)
-        clearTimeout(scrollTimeout)
-      } else {
-        // Hide navbar while scrolling
-        setIsVisible(false)
-        setIsScrolling(true)
-        
-        // Clear previous timeout
-        clearTimeout(scrollTimeout)
-        
-        // Show navbar when user stops scrolling
-        scrollTimeout = setTimeout(() => {
-          setIsVisible(true)
-          setIsScrolling(false)
-        }, 150) // 150ms delay after scroll stops
-      }
-      
-      setLastScrollY(currentScrollY)
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      clearTimeout(scrollTimeout)
-    }
-  }, [])
 
   return (
-    <nav className={`navbar ${isScrolling ? 'scrolling' : ''} ${isVisible ? 'visible' : 'hidden'}`}>
+    <nav className={`navbar ${isScrolling ? 'hidden' : 'visible'}`}>
       <div className="navbar-container">
         {/* Portfolio Label - Left Side */}
         <div className="navbar-brand">
@@ -77,8 +39,8 @@ export default function Navbar() {
           <a href="#about" onClick={() => scrollToSection('about')} className="navbar-link">
             About
           </a>
-          <a href="#contact" onClick={() => scrollToSection('contact')} className="navbar-link contact-btn">
-            Contact
+          <a onClick={onShowGetInTouch} className="navbar-link contact-btn">
+            Get in touch
           </a>
         </div>
 
@@ -98,8 +60,8 @@ export default function Navbar() {
         <a href="#about" onClick={() => scrollToSection('about')} className="mobile-link">
           About
         </a>
-        <a href="#contact" onClick={() => scrollToSection('contact')} className="mobile-link">
-          Contact
+        <a onClick={onShowGetInTouch} className="mobile-link">
+          Get in touch
         </a>
       </div>
     </nav>

@@ -1,19 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import './Footer.css'
 
 export default function Footer() {
-  const [email, setEmail] = useState('')
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault()
-    // Handle newsletter subscription
-    console.log('Newsletter subscription:', email)
-    setEmail('')
   }
 
   const footerLinks = {
@@ -87,23 +78,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter Section */}
-          <div className="footer-section newsletter-section">
-            <h4 className="footer-section-title">Newsletter</h4>
-            <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="newsletter-input"
-                required
-              />
-              <button type="submit" className="newsletter-submit">
-                Submit
-              </button>
-            </form>
-          </div>
         </div>
 
         {/* Bottom Bar */}

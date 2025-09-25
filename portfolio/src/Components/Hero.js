@@ -4,6 +4,7 @@ import './Hero.css'
 export default function Hero() {
   const videoRef = useRef(null)
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+  const [isPlaying, setIsPlaying] = useState(true)
 
   // Array of video sources
   const videos = [
@@ -18,6 +19,19 @@ export default function Hero() {
     if (videoRef.current) {
       videoRef.current.load()
       videoRef.current.play()
+      setIsPlaying(true)
+    }
+  }
+
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause()
+        setIsPlaying(false)
+      } else {
+        videoRef.current.play()
+        setIsPlaying(true)
+      }
     }
   }
   return (
@@ -76,6 +90,23 @@ export default function Hero() {
                 <source src={videos[currentVideoIndex].src} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              
+              {/* Play/Pause Button Overlay */}
+              <button 
+                className="video-play-pause-overlay"
+                onClick={togglePlayPause}
+                aria-label={isPlaying ? 'Pause video' : 'Play video'}
+              >
+                {isPlaying ? (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                  </svg>
+                ) : (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                )}
+              </button>
               
               {/* Video Selection Bar */}
               <div className="video-selection-bar">
