@@ -4,49 +4,56 @@ import './About.css'
 export default function About() {
   return (
     <section id="about" className="about">
-      <div className="container">
-        {/* Main Title */}
-        <h2 className="title">About me</h2>
+      <div className="about-container">
+        {/* Left Side - About Content */}
+        <div className="about-content">
+          <div className="about-greeting">
+            <h2 className="about-title">
+              <span className="greeting-text">Hello!</span> I'm <span className="name-text">Asif</span>
+            </h2>
+          </div>
+          
+          <div className="about-role">
+            <div className="role-line"></div>
+            <span className="role-text">Mobile App Developer</span>
+            <span className="role-icon">⭐</span>
+          </div>
+          
+          <p className="about-description">
+            Hello! I'm Asif. I'm a <strong>mobile app developer, cross-platform expert,</strong> 
+            UI/UX designer, API developer & tech enthusiast. I specialize in creating 
+            modern mobile applications that deliver exceptional user experiences.
+          </p>
+          
+          {/* Key Points/Values */}
+          <div className="about-values">
+            <div className="value-item">
+              <span className="checkmark">✓</span>
+              <span className="value-text">Apps must be user-friendly</span>
+            </div>
+            <div className="value-item">
+              <span className="checkmark">✓</span>
+              <span className="value-text">Solve problems elegantly</span>
+            </div>
+            <div className="value-item">
+              <span className="checkmark">✓</span>
+              <span className="value-text">Testing, feedback, and validation</span>
+            </div>
+          </div>
+          
+          {/* Call to Action Buttons */}
+          <div className="about-buttons">
+            <button className="about-btn filled">Let's Talk</button>
+            <a href="#" className="about-btn-link">Download CV ↓</a>
+          </div>
+        </div>
         
-        {/* Grid Container */}
-        <div className="grid">
-          {/* Row 1 - 2 columns */}
-          <div className="row">
-            <div className="box intro">
-              <p>I'm a cross-platform mobile app developer specializing in .NET MAUI. I build high-performance apps with clean architecture, seamless UI, and efficient backend integration. With experience in API development and Firebase services, I create scalable and secure mobile solutions from concept to launch.</p>
-            </div>
-            <div className="box profile">
-              <div className="image-placeholder">
-                <img src="/Assets/asifimage.jpg" alt="Asif" />
-              </div>
-            </div>
+        {/* Right Side - Visual Content */}
+        <div className="about-visual">
+          <div className="about-image-container">
+            <img src="/Assets/asifimage.JPG" alt="Asif" className="about-image" />
+          
           </div>
-
-          {/* Row 2 - 2 columns bento box */}
-          <div className="row">
-            <div className="box box1">
-              <div className="inner-row">
-                <div className="inner-box inner-box1">
-                  <p>Inner box 1</p>
-                </div>
-                <div className="inner-box inner-box2">
-                  <p>Inner box 2</p>
-                </div>
-              </div>
-              <div className="inner-second-row">
-                <div className="inner-second-box inner-second-box1">
-                  <p>Inner box 1</p>
-                </div>
-                <div className="inner-second-box inner-second-box2">
-                  <p>Inner box 2</p>
-                </div>
-              </div>
-            </div>
-            <div className="box box2">
-              <p>Second bento box content</p>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>

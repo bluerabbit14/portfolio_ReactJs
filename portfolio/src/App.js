@@ -4,8 +4,6 @@ import Hero from './Components/Hero';
 import Project from './Components/Project';
 import About from './Components/About';
 import Skill from './Components/Skill';
-import VerticallScroll from './Components/VerticallScroll';
-import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 import GetInTouchForm from './Components/GetInTouchForm';
 import './App.css';
@@ -46,18 +44,15 @@ function App() {
     />
     <Hero></Hero>
     <Project></Project>
+    {/* <About></About> */}
     <Skill></Skill>
-    <About></About>
-    
-    <VerticallScroll></VerticallScroll>
-    {/* <Contact></Contact> */}
     <Footer></Footer>
     
     {/* GetInTouch Form Modal */}
     <GetInTouchForm 
       isOpen={showGetInTouch} 
       onClose={() => setShowGetInTouch(false)} 
-    />
+    /> 
     </>
   );
 }

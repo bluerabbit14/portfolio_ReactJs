@@ -22,7 +22,7 @@ export default function Navbar({ isScrolling, onShowGetInTouch }) {
 
 
   return (
-    <nav className={`navbar ${isScrolling ? 'hidden' : 'visible'}`}>
+    <nav className="navbar">
       <div className="navbar-container">
         {/* Portfolio Label - Left Side */}
         <div className="navbar-brand">

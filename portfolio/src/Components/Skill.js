@@ -1,85 +1,167 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Skill.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { 
+  faEnvelope,
+  faStar,
+  faDesktop,
+  faNetworkWired,
+  faChevronDown,
+  faPalette,
+  faMobileAlt
+} from '@fortawesome/free-solid-svg-icons'
+import { 
+  faFacebook, 
+  faYoutube, 
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons'
 
 export default function Skill() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [hoveredSkill, setHoveredSkill] = useState(null)
-
-  const handleMouseMove = (e) => {
-    setMousePosition({ x: e.clientX, y: e.clientY })
-  }
-
-  const handleSkillHover = (skillId) => {
-    setHoveredSkill(skillId)
-  }
-
-  const handleSkillLeave = () => {
-    setHoveredSkill(null)
-  }
-  const skills = [
-    { id: '01', name: 'App Development', image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop' },
-    { id: '02', name: 'UI Design', image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&h=300&fit=crop' },
-    { id: '03', name: 'Architecture Design', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop' },
-    { id: '04', name: 'Hosting and Deployment', image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop' },
-    { id: '05', name: 'API Integration', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop' }
-  ]
-
   return (
-    <section id="skills" className="skill" onMouseMove={handleMouseMove}>
-      <div className="skill-container">
-        {/* Left Side - Process Heading */}
-        <div className="skill-left">
-          <h2 className="skill-heading">SKILLS</h2>
-          <div className="skill-line"></div>
+    <>
+      {/* Horizontal Service Ribbon */}
+      <div className="service-ribbon">
+          <div className="ribbon-item">
+            <FontAwesomeIcon icon={faStar} className="ribbon-icon" />
+            <span className="ribbon-text">WEB DESIGN</span>
+          </div>
+          <div className="ribbon-divider"></div>
+          <div className="ribbon-item">
+            <FontAwesomeIcon icon={faStar} className="ribbon-icon" />
+            <span className="ribbon-text">APP DESIGN</span>
+          </div>
+          <div className="ribbon-divider"></div>
+          <div className="ribbon-item">
+            <FontAwesomeIcon icon={faStar} className="ribbon-icon" />
+            <span className="ribbon-text">DEVELOPMENT</span>
+          </div>
+          <div className="ribbon-divider"></div>
+          <div className="ribbon-item">
+            <FontAwesomeIcon icon={faStar} className="ribbon-icon" />
+            <span className="ribbon-text">WEB FLOW</span>
+          </div>
+          <div className="ribbon-divider"></div>
+          <div className="ribbon-item">
+            <FontAwesomeIcon icon={faStar} className="ribbon-icon" />
+            <span className="ribbon-text">BRANDING</span>
+          </div>
+        </div>
+        <section id="skills" className="skill">
+      {/* Header Area */}
+      <div className="skill-header">
+        <div className="social-links">
+          <div className="social-item">
+            <FontAwesomeIcon icon={faFacebook} className="social-icon" />
+            <span className="social-text">FACEBOOK</span>
+          </div>
+          <div className="social-divider"></div>
+          <div className="social-item">
+            <FontAwesomeIcon icon={faYoutube} className="social-icon" />
+            <span className="social-text">YOUTUBE</span>
+          </div>
+          <div className="social-divider"></div>
+          <div className="social-item">
+            <FontAwesomeIcon icon={faTwitter} className="social-icon" />
+            <span className="social-text">TWITTER</span>
+          </div>
         </div>
         
-        {/* Right Side - Skills List */}
-        <div className="skill-right">
-          <h3 className="skill-subheading">Things i can help you with:</h3>
-          <div className="skill-list">
-            {skills.map((skill, index) => (
-              <div 
-                key={skill.id} 
-                className="skill-item"
-                onMouseEnter={() => handleSkillHover(skill.id)}
-                onMouseLeave={handleSkillLeave}
-              >
-                <div className="skill-item-content">
-                  <span className="skill-number">{skill.id}</span>
-                  <span className="skill-name">
-                    {skill.name.split(' ').map((word, wordIndex) => (
-                      <span key={wordIndex} className="skill-word">
-                        {word}
-                      </span>
-                    ))}
-                  </span>
-                  <span className="skill-plus">+</span>
-                </div>
-                <div className="skill-item-line"></div>
-              </div>
-            ))}
-          </div>
+        <div className="contact-info">
+          <FontAwesomeIcon icon={faEnvelope} className="email-icon" />
+          <span className="email-text">14ASIFCR7@GMAIL.COM</span>
         </div>
       </div>
-      
-      {/* Global Image Overlay */}
-      {hoveredSkill && (
-        <div 
-          className="skill-image-overlay"
-          style={{
-            left: mousePosition.x,
-            top: mousePosition.y - 20
-          }}
-        >
-          <div className="skill-image-frame">
-            <img 
-              src={skills.find(skill => skill.id === hoveredSkill)?.image} 
-              alt={skills.find(skill => skill.id === hoveredSkill)?.name}
-              className="skill-image"
-            />
+
+      {/* Main Content */}
+      <div className="skill-container">
+        <div className="skill-main-row">
+          {/* Left Side - Title and Description */}
+          <div className="skill-left">
+            <div className="skill-subtitle">
+              <div className="subtitle-line"></div>
+              <span className="subtitle-text">MY SERVICES?</span>
+            </div>
+            
+            <div className="skill-title-section">
+              <h2 className="skill-title">WHAT I'M OFFERING</h2>
+              <p className="skill-description">
+                Expert mobile app development services using modern technologies. 
+                I specialize in creating cross-platform applications that deliver 
+                exceptional user experiences.
+              </p>
+            </div>
+
+  
           </div>
+
         </div>
-      )}
+
+        {/* Scroll Indicator and Service Cards Section */}
+        <div className="skill-bottom-section">
+          {/* Scroll Indicator */}
+          <div className="scroll-indicator">
+            <span className="scroll-text">SCROLL DOWN</span>
+            <div className="scroll-line"></div>
+            <button className="scroll-button">
+              <FontAwesomeIcon icon={faChevronDown} className="scroll-arrow" />
+            </button>
+          </div>
+
+          {/* Service Cards */}
+          <div className="skill-cards">
+            {/* Card 1 - Highlighted */}
+            <div className="skill-card highlighted">
+              <div className="card-icon">
+                <FontAwesomeIcon icon={faMobileAlt} />
+              </div>
+              <h3 className="card-title">APP DEVELOPMENT</h3>
+              <a href="#" className="read-more-link">
+                READ MORE
+                <span className="arrow">→</span>
+              </a>
+            </div>
+
+            {/* Card 2 */}
+            <div className="skill-card">
+              <div className="card-icon">
+                <FontAwesomeIcon icon={faDesktop} />
+              </div>
+              <h3 className="card-title">WEB DEVELOPMENT</h3>
+              <a href="#" className="read-more-link">
+                READ MORE
+                <span className="arrow">→</span>
+              </a>
+            </div>
+
+            {/* Card 3 */}
+            <div className="skill-card">
+              <div className="card-icon">
+                <FontAwesomeIcon icon={faNetworkWired} />
+              </div>
+              <h3 className="card-title">API INTEGRATION</h3>
+              <a href="#" className="read-more-link">
+                READ MORE
+                <span className="arrow">→</span>
+              </a>
+            </div>
+
+               {/* Card 4 */}
+               <div className="skill-card">
+               <div className="card-icon">
+                 <FontAwesomeIcon icon={faPalette} />
+               </div>
+               <h3 className="card-title">UI/UX DESIGN</h3>
+              <a href="#" className="read-more-link">
+                READ MORE
+                <span className="arrow">→</span>
+              </a>
+            </div>
+          </div> 
+        </div>
+      </div>
     </section>
+
+    </>
+
   )
 }

@@ -7,16 +7,6 @@
   background-color: transparent;
   backdrop-filter: none;
   z-index: 1000;
-  transition: all 0.3s ease;
-  transform: translateY(0);
-}
-
-.navbar.hidden {
-  transform: translateY(-100%);
-}
-
-.navbar.visible {
-  transform: translateY(0);
 }
 
 .navbar-container {

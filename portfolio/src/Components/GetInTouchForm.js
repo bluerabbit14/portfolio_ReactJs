@@ -18,14 +18,9 @@ export default function GetInTouchForm({ isOpen, onClose }) {
   ]
 
   const services = [
+    'App Development',
     'Web Development',
-    'Mobile App Development',
-    'UI/UX Design',
-    'API Development',
-    'Database Design',
-    'Cloud Solutions',
-    'E-commerce Development',
-    'Custom Software Solutions'
+    'API Integration'
   ]
 
   const handleSubmit = (e) => {
@@ -88,18 +83,18 @@ export default function GetInTouchForm({ isOpen, onClose }) {
             <span className="tab-icon">💬</span>
             Message
           </button>
-          <button 
+          {/* <button 
             className={`tab-button ${activeTab === 'services' ? 'active' : ''}`}
             onClick={() => setActiveTab('services')}
           >
             <span className="tab-icon">📋</span>
             Services
-          </button>
+          </button> */}
         </div>
 
         {/* Content */}
         <div className="modal-body">
-          <div className="toggle-section">
+          {/* <div className="toggle-section">
             <span className="toggle-label">I'm interested in working with Asif</span>
             <label className="toggle-switch">
               <input
@@ -109,7 +104,7 @@ export default function GetInTouchForm({ isOpen, onClose }) {
               />
               <span className="toggle-slider"></span>
             </label>
-          </div>
+          </div> */}
 
           {activeTab === 'message' ? (
             <form onSubmit={handleSubmit} className="contact-form">
@@ -148,8 +143,8 @@ export default function GetInTouchForm({ isOpen, onClose }) {
                     </div>
                   </div>
 
-                  <div className="form-section">
-                    <div className="form-group">
+                  {/* <div className="form-section">
+                     <div className="form-group">
                       <label htmlFor="targetDate" className="form-label">Target Date <span className="section-subtitle-bold">*</span></label>
                       <p className="field-description">Select when you need the project to be completed</p>
                       <select
@@ -164,9 +159,9 @@ export default function GetInTouchForm({ isOpen, onClose }) {
                           <option key={index} value={option}>{option}</option>
                         ))}
                       </select>
-                    </div>
+                    </div> */}
 
-                    <div className="form-group">
+                    {/* <div className="form-group">
                       <label htmlFor="projectBudget" className="form-label">Project Budget <span className="section-subtitle-bold">*</span></label>
                       <p className="field-description">Asif's minimum project rate is $2,000 (USD)</p>
                       <div className="budget-input-container">
@@ -191,8 +186,8 @@ export default function GetInTouchForm({ isOpen, onClose }) {
                         <span className="checkmark"></span>
                         Let Asif recommend a budget
                       </label>
-                    </div>
-                  </div>
+                    </div> 
+                  </div> */}
                 </>
               ) : (
                 <div className="form-group">
