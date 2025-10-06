@@ -122,32 +122,6 @@ export default function Project() {
             </div>
           </div>
         </div>
-
-
-        {/* Project 5 */}
-        <div className="project-card">
-          <div className="card-content">
-          <div className="content-left">
-              <div className="media-section">
-                <div className="project-image-1">
-                  <img src="/Assets/sampleImage.JPG" alt="Project" />
-                </div>
-              </div>
-          </div>
-            
-            <div className="content-right">
-              <h3 className="card-subtitle">Project category</h3>
-              <h2 className="card-title">
-                proejct name or short description <span className="highlight-text">highlight text of a description</span>
-              </h2>
-              <p className="card-description">
-                this is a description of the project.
-              </p>
-              <button className="cta-button">action button</button>
-            </div>
-            
-          </div>
-        </div>
     </div>
     </section>
   )

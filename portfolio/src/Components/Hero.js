@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import './Hero.css'
 
-export default function Hero() {
+export default function Hero({ onShowGetInTouch }) {
   const videoRef = useRef(null)
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
@@ -34,6 +34,13 @@ export default function Hero() {
       }
     }
   }
+
+  const scrollToProjects = () => {
+    const element = document.getElementById('projects')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
   return (
     <section id="home" className="hero">
       <div className="hero-container">
@@ -56,8 +63,8 @@ export default function Hero() {
           
           {/* Call to Action Buttons */}
           <div className="hero-buttons">
-            <button className="hero-btn outline">View Portfolio</button>
-            <button className="hero-btn filled">Let's Work Together</button>
+            <button onClick={scrollToProjects} className="hero-btn outline">View Work</button>
+            <button onClick={onShowGetInTouch} className="hero-btn filled">Get in touch</button>
           </div>
           
           {/* Tech Stack */}

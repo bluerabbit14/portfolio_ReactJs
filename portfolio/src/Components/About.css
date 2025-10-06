@@ -93,37 +93,51 @@
   color: #333;
 }
 
-/* About Values */
-.about-values {
+/* Three Square Boxes */
+.about-boxes {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin: 20px 0;
+  gap: 20px;
+  margin: 30px 0;
+  justify-content: flex-start;
 }
 
-.value-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.checkmark {
-  width: 20px;
-  height: 20px;
-  background-color: #333;
-  color: white;
-  border-radius: 50%;
+.about-box {
+  width: 120px;
+  height: 120px;
+  background-color: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.value-text {
-  font-size: 1rem;
+.about-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #af4c68;
+}
+
+.box-content {
+  text-align: center;
+  padding: 10px;
+}
+
+.box-title {
+  font-size: 14px;
+  font-weight: 600;
   color: #333;
-  font-weight: 500;
+  margin: 0 0 5px 0;
+  line-height: 1.2;
+}
+
+.box-description {
+  font-size: 11px;
+  color: #666;
+  margin: 0;
+  line-height: 1.3;
 }
 
 /* About Buttons */
@@ -156,16 +170,144 @@
   background-color: #555;
 }
 
+/* Get in Touch Button - Same styling as navbar */
+.about-btn.get-in-touch-btn {
+  background-color: #af4c68;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+}
+
+.about-btn.get-in-touch-btn:hover {
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
 .about-btn-link {
   color: #333;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
   transition: color 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.about-btn-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #333;
+  transition: width 0.3s ease;
 }
 
 .about-btn-link:hover {
-  color: #666;
+  color: #333;
+}
+
+  .about-btn-link:hover::after {
+    width: 100%;
+  }
+
+/* Download Success Notification */
+.download-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  animation: slideInUp 0.3s ease-out;
+}
+
+.notification-content {
+  background-color: #af4c68;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(175, 76, 104, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notification-icon {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.notification-text {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Animation */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design for Notification */
+@media (max-width: 768px) {
+  .download-notification {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .notification-content {
+    padding: 10px 16px;
+    border-radius: 20px;
+  }
+  
+  .notification-text {
+    font-size: 13px;
+  }
+  
+  .notification-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .download-notification {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .notification-content {
+    padding: 8px 14px;
+    border-radius: 18px;
+  }
+  
+  .notification-text {
+    font-size: 12px;
+  }
+  
+  .notification-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
 }
 
 /* Right Side - Visual Content */
@@ -212,6 +354,10 @@
     width: 350px;
     height: 450px;
   }
+  
+  .about-boxes {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -230,6 +376,24 @@
   .about-image-container {
     width: 300px;
     height: 400px;
+  }
+  
+  .about-boxes {
+    gap: 15px;
+    margin: 25px 0;
+  }
+  
+  .about-box {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .box-title {
+    font-size: 12px;
+  }
+  
+  .box-description {
+    font-size: 10px;
   }
   
   .about-buttons {
@@ -251,4 +415,23 @@
     width: 250px;
     height: 350px;
   }
+  
+  .about-boxes {
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .about-box {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .box-title {
+    font-size: 11px;
+  }
+  
+  .box-description {
+    font-size: 9px;
+  }
 }
+

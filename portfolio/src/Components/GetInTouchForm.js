@@ -2,39 +2,52 @@ import React, { useState, useEffect } from 'react'
 import './GetInTouchForm.css'
 
 export default function GetInTouchForm({ isOpen, onClose }) {
-  const [activeTab, setActiveTab] = useState('message')
-  const [isWorkingWithUs, setIsWorkingWithUs] = useState(true)
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const [targetDate, setTargetDate] = useState('')
-  const [projectBudget, setProjectBudget] = useState('')
-  const [letRecommendBudget, setLetRecommendBudget] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', or null
 
-  const targetDateOptions = [
-    'Within the next few days',
-    'Within the next few weeks',
-    'In a month or more',
-    'Not sure'
-  ]
-
-  const services = [
-    'App Development',
-    'Web Development',
-    'API Integration'
-  ]
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', { 
-      email, 
-      message, 
-      isWorkingWithUs, 
-      targetDate, 
-      projectBudget, 
-      letRecommendBudget 
-    })
-    onClose()
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message
+        })
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitStatus('success')
+        // Reset form
+        setName('')
+        setEmail('')
+        setMessage('')
+        // Close modal after 2 seconds
+        setTimeout(() => {
+          onClose()
+          setSubmitStatus(null)
+        }, 2000)
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   // Disable body scroll when modal is open
@@ -74,153 +87,88 @@ export default function GetInTouchForm({ isOpen, onClose }) {
           </button>
         </div>
 
-        {/* Tabs */}
-        <div className="tabs-section">
-          <button 
-            className={`tab-button ${activeTab === 'message' ? 'active' : ''}`}
-            onClick={() => setActiveTab('message')}
-          >
-            <span className="tab-icon">💬</span>
-            Message
-          </button>
-          {/* <button 
-            className={`tab-button ${activeTab === 'services' ? 'active' : ''}`}
-            onClick={() => setActiveTab('services')}
-          >
-            <span className="tab-icon">📋</span>
-            Services
-          </button> */}
-        </div>
 
         {/* Content */}
         <div className="modal-body">
-          {/* <div className="toggle-section">
-            <span className="toggle-label">I'm interested in working with Asif</span>
-            <label className="toggle-switch">
-              <input
-                type="checkbox"
-                checked={isWorkingWithUs}
-                onChange={(e) => setIsWorkingWithUs(e.target.checked)}
-              />
-              <span className="toggle-slider"></span>
-            </label>
-          </div> */}
-
-          {activeTab === 'message' ? (
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-group">
-                <label htmlFor="email" className="form-label">Email <span className="section-subtitle-bold">*</span></label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address"
-                  className="form-input"
-                  required
-                />
-              </div>
-
-              {isWorkingWithUs ? (
-                <>
-                  <div className="form-section">
-                    <p className="section-subtitle"> Project Details <span className="section-subtitle-bold">*</span><span className="section-subtitle-italic">Minimum 50 characters</span></p>
-                    <p className="section-description">
-                      Describe your project 
-                    </p>
-                    
-                    <div className="form-group">
-                      <textarea
-                        id="message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Include any project details, requirements, or goals..."
-                        className="form-textarea project-details"
-                        rows="4"
-                        required
-                        minLength="50"
-                      />
-                    </div>
-                  </div>
-
-                  {/* <div className="form-section">
-                     <div className="form-group">
-                      <label htmlFor="targetDate" className="form-label">Target Date <span className="section-subtitle-bold">*</span></label>
-                      <p className="field-description">Select when you need the project to be completed</p>
-                      <select
-                        id="targetDate"
-                        value={targetDate}
-                        onChange={(e) => setTargetDate(e.target.value)}
-                        className="form-select"
-                        required
-                      >
-                        <option value="">Please select...</option>
-                        {targetDateOptions.map((option, index) => (
-                          <option key={index} value={option}>{option}</option>
-                        ))}
-                      </select>
-                    </div> */}
-
-                    {/* <div className="form-group">
-                      <label htmlFor="projectBudget" className="form-label">Project Budget <span className="section-subtitle-bold">*</span></label>
-                      <p className="field-description">Asif's minimum project rate is $2,000 (USD)</p>
-                      <div className="budget-input-container">
-                        <span className="currency-symbol">$</span>
-                        <input
-                          type="number"
-                          id="projectBudget"
-                          value={projectBudget}
-                          onChange={(e) => setProjectBudget(e.target.value)}
-                          placeholder="Enter amount"
-                          className="form-input budget-input"
-                          disabled={letRecommendBudget}
-                          required={!letRecommendBudget}
-                        />
-                      </div>
-                      <label className="checkbox-label">
-                        <input
-                          type="checkbox"
-                          checked={letRecommendBudget}
-                          onChange={(e) => setLetRecommendBudget(e.target.checked)}
-                        />
-                        <span className="checkmark"></span>
-                        Let Asif recommend a budget
-                      </label>
-                    </div> 
-                  </div> */}
-                </>
-              ) : (
-                <div className="form-group">
-                  <label htmlFor="message" className="form-label">Message <span className="section-subtitle-bold">*</span></label>
-                  <textarea
-                    id="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Type your message..."
-                    className="form-textarea simple-message"
-                    rows="6"
-                    required
-                  />
-                </div>
-              )}
-
-              <button type="submit" className="send-button">
-                Send Message
-              </button>
-            </form>
-          ) : (
-            <div className="services-content">
-              <h3 className="services-title">Services I Provide</h3>
-              <div className="services-grid">
-                {services.map((service, index) => (
-                  <div key={index} className="service-item">
-                    <span className="service-icon">🔧</span>
-                    <span className="service-name">{service}</span>
-                  </div>
-                ))}
+          {/* Status Messages */}
+          {submitStatus === 'success' && (
+            <div className="status-message success">
+              <div className="status-icon">✓</div>
+              <div className="status-text">
+                <h3>Message Sent Successfully!</h3>
+                <p>Thank you for contacting me. I'll get back to you within 24 hours.</p>
               </div>
             </div>
           )}
+
+          {submitStatus === 'error' && (
+            <div className="status-message error">
+              <div className="status-icon">✗</div>
+              <div className="status-text">
+                <h3>Error Sending Message</h3>
+                <p>Sorry, there was an error sending your message. Please try again.</p>
+              </div>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-group">
+              <label htmlFor="name" className="form-label">Name <span className="section-subtitle-bold">*</span></label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Enter your full name"
+                className="form-input"
+                required
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">Email <span className="section-subtitle-bold">*</span></label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email address"
+                className="form-input"
+                required
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="message" className="form-label">Message <span className="section-subtitle-bold">*</span></label>
+              <textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Type your message..."
+                className="form-textarea simple-message"
+                rows="6"
+                required
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <button 
+              type="submit" 
+              className={`send-button ${isSubmitting ? 'submitting' : ''}`}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <span className="spinner"></span>
+                  Sending...
+                </>
+              ) : (
+                'Send Message'
+              )}
+            </button>
+          </form>
         </div>
       </div>
     </div>

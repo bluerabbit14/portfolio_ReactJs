@@ -42,9 +42,9 @@ function App() {
       isScrolling={isScrolling} 
       onShowGetInTouch={() => setShowGetInTouch(true)} 
     />
-    <Hero></Hero>
+    <Hero onShowGetInTouch={() => setShowGetInTouch(true)}></Hero>
+    <About onShowGetInTouch={() => setShowGetInTouch(true)}></About>
     <Project></Project>
-    {/* <About></About> */}
     <Skill></Skill>
     <Footer></Footer>
     

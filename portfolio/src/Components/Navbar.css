@@ -84,16 +84,20 @@
 }
 
 .navbar-link.contact-btn {
-  background-color: #af4c68;
+  background-color: transparent;
   color: #ffffff;
   padding: 8px 16px;
   border-radius: 18px;
+  border: 2px solid #af4c68;
+  color: #af4c68;
   transition: all 0.3s ease;
 }
 
 .navbar-link.contact-btn:hover {
-  transform: scale(1.05);
-  transition: all 0.4s ease;
+  transform: scale(1);
+  background-color: #af4c68;
+  color: #ffffff;
+  transition: all 0.3s ease;
 }
 
 .navbar-link.contact-btn::after {
