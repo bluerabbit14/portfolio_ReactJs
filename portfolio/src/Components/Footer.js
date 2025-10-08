@@ -1,113 +1,128 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import './Footer.css'
 
-export default function Footer() {
+export default function Footer({ onServiceClick }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  const footerLinks = {
-    category1: [
-      { name: 'Home', href: '#' },
-      { name: 'Projects', href: '#' },
-      { name: 'Skills', href: '#' }
-    ],
-    category2: [
-      { name: 'List Item 1', href: '#' },
-      { name: 'List Item 2', href: '#' },
-      { name: 'List Item 3', href: '#' }
-    ],
-    social: [
-      { name: 'LinkedIn', href: 'https://linkedin.com/in/asifabbas', icon: 'fab fa-linkedin' },
-      { name: 'GitHub', href: 'https://github.com/asifabbas', icon: 'fab fa-github' },
-      { name: 'Instagram', href: 'https://instagram.com/asifabbas', icon: 'fab fa-instagram' },
-      { name: 'Twitter', href: 'https://twitter.com/asifabbas', icon: 'fab fa-twitter' }
-    ]
   }
 
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Scroll to Top Button */}
-        <button 
-          className="scroll-to-top" 
-          onClick={scrollToTop}
-        >
-          <i className="fas fa-arrow-up arrow-animated"></i>
-        </button>
-       {/* Website Name */}
-        <div className="footer-container-WebsiteName">
-          <h2 className="footer-website-name"></h2>
-        </div>
         {/* Main Footer Content */}
         <div className="footer-content">
-          {/* Description Block */}
-          <div className="footer-section description-section">
-            <h3 className="footer-section-title-Name">Portfolio</h3>
-            <p className="footer-description">
-              Here a sample text of description will be present. A short website description will be present here.
-            </p>
+          {/* Column 1 - Platforms */}
+          <div className="footer-column">
+            <div className="footer-section">
+              <h3 className="footer-section-title">Platforms</h3>
+              <ul className="footer-links">
+                <li><a href="#home" className="footer-link">Home</a></li>
+                <li><a href="#projects" className="footer-link">Projects</a></li>
+                <li><a href="#about" className="footer-link">About</a></li>
+                <li><a href="#skills" className="footer-link">Skills</a></li>
+              </ul>
+            </div>
           </div>
 
-          {/* Category 1 Links */}
-          <div className="footer-section">
-            <h4 className="footer-section-title">Main Page</h4>
-            <ul className="footer-links">
-              {footerLinks.category1.map((link, index) => (
-                <li key={index}>
-                  <a href={link.href} className="footer-link">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Column 2 - Technologies */}
+          <div className="footer-column">
+            <div className="footer-section">
+              <h3 className="footer-section-title">Technologies</h3>
+              <ul className="footer-links">
+              <li><a href="https://dotnet.microsoft.com/en-us/apps/maui" className="footer-link">.NET MAUI</a></li>
+                <li><a href="https://react.dev/" className="footer-link">React</a></li>
+                
+                <li><a href="https://firebase.google.com/?_gl=1*1acyu1f*_up*MQ..&gclid=Cj0KCQjwl5jHBhDHARIsAB0YqjxO14dvvLVVN48jwhv3jTqenpmI3_QbDTP0xjJGa5yJyi_60q9WFtYaAhaVEALw_wcB&gclsrc=aw.ds&gbraid=0AAAAADpUDOjWpRCjOJ3XI4egR6U_4Dlvh" className="footer-link">Firebase</a></li>
+                <li><a href="https://www.figma.com/make/?gclsrc=aw.ds&&utm_source=google&utm_medium=cpc&utm_campaign=22570738050&utm_term=figma&utm_content=753197128699&utm_adgroup=182267200240&gad_source=1&gad_campaignid=22570738050&gbraid=0AAAAACTf0kMq6feR_9b2TBj9yaIJ1Vak5&gclid=Cj0KCQjwl5jHBhDHARIsAB0Yqjx141BBg-0y_EmrVzpfhOtvDp893PnYtECPcw6OZaDrq0H07eGuRncaAkZUEALw_wcB" className="footer-link">Figma</a></li>                
+                <li><a href="https://www.microsoft.com/en-in/sql-server" className="footer-link">Microsoft SQL Server</a></li>
+                <li><a href="https://www.mysql.com/" className="footer-link">MySQL</a></li>
+              </ul>
+            </div>
           </div>
 
-          {/* Category 2 Links */}
-          <div className="footer-section">
-            <h4 className="footer-section-title">Features</h4>
-            <ul className="footer-links">
-              {footerLinks.category2.map((link, index) => (
-                <li key={index}>
-                  <a href={link.href} className="footer-link">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Column 3 - Services */}
+          <div className="footer-column">
+            <div className="footer-section">
+              <h3 className="footer-section-title">Services</h3>
+              <ul className="footer-links">
+                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('mobile-app-development'); }}>Mobile App Development</a></li>
+                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('web-development'); }}>Web Development</a></li>
+                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('ui-ux-design'); }}>UI/UX Design</a></li>
+                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('api-development'); }}>API Development</a></li>
+                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('database-design'); }}>Database Design</a></li>
+                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('ai-bot'); }}>AI Bot</a></li>
+              </ul>
+            </div>
           </div>
 
+          {/* Column 4 - Connect */}
+          <div className="footer-column">
+            <div className="footer-section">
+              <h3 className="footer-section-title">Connect</h3>
+              <ul className="footer-links">
+                <li><a href="https://linkedin.com/in/asif-abbas-10260a213/" className="footer-link">LinkedIn</a></li>
+                <li><a href="https://github.com/bluerabbit14/" className="footer-link">GitHub</a></li>
+                <li><a href="https://www.instagram.com/being.sif/" className="footer-link">Instagram</a></li>
+                <li><a href="https://x.com/14asifcr7" className="footer-link">X</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
+
+        {/* Divider */}
+        <div className="footer-divider"></div>
 
         {/* Bottom Bar */}
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-
-            {/* Salutation Text */}
-            <div className="footer-salutation">
-              <p>
-                Powered by <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer" className="footer-link-highlight">React</a> • 
-                Developed by <a href="https://github.com/asifabbas" target="_blank" rel="noopener noreferrer" className="footer-link-highlight">Asif Abbas</a>
+            {/* Left Side */}
+            <div className="footer-bottom-left">
+              <p className="footer-copyright">
+                Copyright © 2025 Asif Abbas. All rights reserved.
               </p>
+              <div className="footer-legal-links">
+                <a href="#" className="footer-legal-link">Terms of Use</a>
+                <span className="footer-separator">•</span>
+                <a href="#" className="footer-legal-link">Privacy Policy</a>
+                <span className="footer-separator">•</span>
+                <a href="#" className="footer-legal-link">Agreements</a>
+              </div>
             </div>
 
-            {/* Social Media Icons */}
-            <div className="footer-social-icons">
-              {footerLinks.social.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="social-icon-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className={`social-icon ${social.icon}`}></i>
-                </a>
-              ))}
+            {/* Right Side */}
+            <div className="footer-bottom-right">
+              <div className="footer-controls">
+                {/* Theme Switcher */}
+                {/* <div className="theme-switcher">
+                  <button className="theme-btn active">Light</button>
+                  <button className="theme-btn">Dark</button>
+                  <button className="theme-btn">Auto</button>
+                </div> */}
+                
+                {/* Language Selector */}
+                {/* <div className="language-selector">
+                  <span className="language-text">English</span>
+                  <svg className="language-chevron" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                    <path d="M6 8L2 4h8l-4 4z"/>
+                  </svg>
+                </div> */}
+
+                {/* Scroll to Top Button */}
+        <button 
+          className="scroll-to-top" 
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 4l-4 4h3v4h2V8h3l-4-4z"/>
+          </svg>
+        </button>
+              </div>
             </div>
           </div>
         </div>
+
+        
       </div>
     </footer>
   )

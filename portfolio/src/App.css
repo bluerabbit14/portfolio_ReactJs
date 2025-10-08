@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+  transition: all 0.3s ease;
 }
+
 
 /* Global Responsive Design */
 * {

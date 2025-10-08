@@ -67,23 +67,6 @@ export default function Hero({ onShowGetInTouch }) {
             <button onClick={onShowGetInTouch} className="hero-btn filled">Get in touch</button>
           </div>
           
-          {/* Tech Stack */}
-          <div className="tech-stack-section">
-            <div className="tech-stack-list">
-              <img src="/Assets/React_logo.png" alt="React" className="tech-icon" />
-              <img src="/Assets/Docker.png" alt="Docker" className="tech-icon" />
-              <img src="/Assets/Figma.png" alt="Figma" className="tech-icon" />
-              <img src="/Assets/firebase-studio.png" alt="Firebase" className="tech-icon" />
-              <img src="/Assets/Visual_Studio.png" alt="Visual Studio" className="tech-icon" />
-              <img src="/Assets/VMware.png" alt="VMware" className="tech-icon" />
-            </div>
-            <div className="tech-stack-list tech-stack-row-2">
-              <img src="/Assets/React_logo.png" alt="React" className="tech-icon" />
-              <img src="/Assets/Docker.png" alt="Docker" className="tech-icon" />
-              <img src="/Assets/Figma.png" alt="Figma" className="tech-icon" />
-            </div>
-          </div>
-          
           {/* Video Section */}
           <div className="hero-video-section">
             <div className="hero-video-container">
@@ -136,9 +119,9 @@ export default function Hero({ onShowGetInTouch }) {
       
       {/* Side Social Media Links */}
       <div className="social-sidebar">
-        <a href="#" className="social-link">LinkedIn</a>
-        <a href="#" className="social-link">Github</a>
-        <a href="#" className="social-link">Instagram</a>
+        <a href="https://www.linkedin.com/in/asif-abbas-10260a213/" className="social-link">LinkedIn</a>
+        <a href="https://github.com/bluerabbit14/" className="social-link">Github</a>
+        <a href="https://www.instagram.com/being.sif/" className="social-link">Instagram</a>
       </div>
     </section>
   )
