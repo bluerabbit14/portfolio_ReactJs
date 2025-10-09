@@ -26,7 +26,7 @@ export default function Navbar({ isScrolling, onShowGetInTouch }) {
       <div className="navbar-container">
         {/* Portfolio Label - Left Side */}
         <div className="navbar-brand">
-          <a href="#home" onClick={() => scrollToSection('home')} className="brand-link">
+          <a href="" onClick={() => scrollToSection('home')} className="brand-link">
             Mobile App Developer
           </a>
         </div>

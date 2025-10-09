@@ -15,6 +15,7 @@ import APIDevelopment from './Components/APIDevelopment';
 import DatabaseDesign from './Components/DatabaseDesign';
 import AIBot from './Components/AIBot';
 import './App.css';
+import SpecialistStack from './Components/SpecialistStack';
 
 function App() {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -102,6 +103,7 @@ function App() {
       <About onShowGetInTouch={() => setShowGetInTouch(true)}></About>
       <Skill></Skill>
       <Project onProjectClick={handleProjectClick}></Project>
+      <SpecialistStack></SpecialistStack>
       <Footer onServiceClick={handleServiceClick}></Footer>
       
       {/* GetInTouch Form Modal */}

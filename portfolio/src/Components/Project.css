@@ -114,11 +114,10 @@
 
 /* Project Cards */
 .project-card {
-  background-color: #f8f9fa;
+  background-color: transparent;
   padding: 20px;
   border-radius: 12px;
-  border: 1px solid #e9ecef;
-  transition: transform 0.3s ease;
+  border:none;
 }
 
 
@@ -144,8 +143,8 @@
 .card-subtitle {
   font-size: 14px;
   border: 2px solid #333;
-  font-weight: 400;
-  color: #fff;
+  font-weight: 700;
+  color: #333;
   margin: 0 0 15px 0;
   text-transform: uppercase;
   letter-spacing: 1px;

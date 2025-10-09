@@ -33,7 +33,6 @@ export default function Project({ onProjectClick }) {
       {/* Projects Grid */}
       <div className="projects-container">
         {/* Project 1  */}
-        <div className="project-card">
           <div className="card-content">
             <div className="content-right">
               <div className="media-section">
@@ -56,11 +55,10 @@ export default function Project({ onProjectClick }) {
               <button className="cta-button" onClick={() => handleReadMore('investorly-mobile')}>Read More</button>
             </div>
           </div>
-        </div>
+        
 
         {/* Project 2*/}
-        <div className="project-card">
-          <div className="card-content">
+          <div  className="card-content">
             <div className="content-left text-left">
               <h3 className="card-subtitle">AI Chatbot</h3>
               <h2 className="card-title">
@@ -81,11 +79,10 @@ export default function Project({ onProjectClick }) {
                 </div>
               </div>
             </div>
-          </div>
+          
         </div>
 
         {/* Project 3*/}
-        <div className="project-card">
           <div className="card-content">
           <div className="content-left">
               <div className="media-section">
@@ -107,12 +104,9 @@ export default function Project({ onProjectClick }) {
               </p>
               <button className="cta-button" onClick={() => handleReadMore('investorly-web')}>Read More</button>
             </div>
-            
           </div>
-        </div>
 
         {/* Project 4 */}
-        <div className="project-card">
           <div className="card-content">
             <div className="content-left text-left">
               <h3 className="card-subtitle">API Integration</h3>
@@ -135,8 +129,8 @@ export default function Project({ onProjectClick }) {
               </div>
             </div>
           </div>
+
         </div>
-    </div>
     </section>
   )
 }
