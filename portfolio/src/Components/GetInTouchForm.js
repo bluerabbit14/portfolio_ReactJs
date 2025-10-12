@@ -8,42 +8,32 @@ export default function GetInTouchForm({ isOpen, onClose }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', or null
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus(null)
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          message
-        })
-      })
-
-      const data = await response.json()
-
-      if (data.success) {
-        setSubmitStatus('success')
-        // Reset form
-        setName('')
-        setEmail('')
-        setMessage('')
-        // Close modal after 2 seconds
-        setTimeout(() => {
-          onClose()
-          setSubmitStatus(null)
-        }, 2000)
-      } else {
-        setSubmitStatus('error')
-      }
+      // Create mailto link with pre-filled content
+      const subject = encodeURIComponent(`Contact from ${name}`)
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
+      const mailtoLink = `mailto:asifabbas.dev@gmail.com?subject=${subject}&body=${body}`
+      
+      // Open default email client
+      window.location.href = mailtoLink
+      
+      setSubmitStatus('success')
+      // Reset form
+      setName('')
+      setEmail('')
+      setMessage('')
+      // Close modal after 2 seconds
+      setTimeout(() => {
+        onClose()
+        setSubmitStatus(null)
+      }, 2000)
     } catch (error) {
-      console.error('Error submitting form:', error)
+      console.error('Error opening email client:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -95,8 +85,8 @@ export default function GetInTouchForm({ isOpen, onClose }) {
             <div className="status-message success">
               <div className="status-icon">✓</div>
               <div className="status-text">
-                <h3>Message Sent Successfully!</h3>
-                <p>Thank you for contacting me. I'll get back to you within 24 hours.</p>
+                <h3>Email Client Opened!</h3>
+                <p>Your default email client has opened with a pre-filled message. Please send the email to complete your contact request.</p>
               </div>
             </div>
           )}

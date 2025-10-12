@@ -114,9 +114,9 @@ export default function Project({ onProjectClick }) {
               Orama API — <span className="highlight-text">Scalable & Secure Backend Architecture</span>
               </h2>
               <p className="card-description">
-              Orama API is a RESTful backend service built with ASP.NET Core 9.0, C#, and SQL Server to support secure user registration, authentication, and role-based authorization. It includes robust features like JWT-based login, OTP email verification, and password hashing to protect user data. Both user and admin roles are supported with strict access control.
+              Orama API is a RESTful backend service built with ASP.NET Core 9.0, C#, and SQL Server to support secure user registration, authentication, and role-based authorization. It includes robust features like JWT-based login, OTP email verification, and password hashing to protect user data.
                 <br/>
-                The backend follows Clean Architecture principles, organizing logic into controllers, services, interfaces, and data layers for better maintainability and scalability. Swagger/OpenAPI is integrated for live API documentation, and Entity Framework Core handles seamless interaction with SQL Server. This solution provides a reliable, secure foundation for modern web and mobile applications.
+                The backend follows Clean Architecture principles, organizing logic into controllers, services, interfaces, and data layers for better maintainability and scalability. Swagger/OpenAPI is integrated for live API documentation, and Entity Framework Core handles seamless interaction with SQL Server.
               </p>
               <button className="cta-button" onClick={() => handleReadMore('orama-api')}>Read More</button>
             </div>

@@ -67,6 +67,17 @@ export default function Footer({ onServiceClick }) {
               </ul>
             </div>
           </div>
+
+            {/* Scroll to Top Button */}
+        <button 
+          className="scroll-to-top" 
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+        >
+          <svg width="20" height="26" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 4l-4 4h3v4h2V8h3l-4-4z"/>
+          </svg>
+        </button>
         </div>
 
         {/* Divider */}
@@ -107,16 +118,7 @@ export default function Footer({ onServiceClick }) {
                   </svg>
                 </div> */}
 
-                {/* Scroll to Top Button */}
-        <button 
-          className="scroll-to-top" 
-          onClick={scrollToTop}
-          aria-label="Scroll to top"
-        >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 4l-4 4h3v4h2V8h3l-4-4z"/>
-          </svg>
-        </button>
+              
               </div>
             </div>
           </div>
