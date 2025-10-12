@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Components/Navbar';
 import Hero from './Components/Hero';
-import TechStackScroller from './Components/TechStackScroller';
 import Project from './Components/Project';
 import About from './Components/About';
 import Skill from './Components/Skill';
@@ -22,7 +21,6 @@ function App() {
   const [showGetInTouch, setShowGetInTouch] = useState(false);
   const [currentView, setCurrentView] = useState('home'); // 'home', 'project', or service views
   const [selectedProject, setSelectedProject] = useState(null);
-  const [selectedService, setSelectedService] = useState(null);
 
   useEffect(() => {
     let scrollTimeout;
@@ -57,12 +55,10 @@ function App() {
   const handleBackToHome = () => {
     setCurrentView('home');
     setSelectedProject(null);
-    setSelectedService(null);
     window.scrollTo(0, 0); // Scroll to top when going back
   };
 
   const handleServiceClick = (serviceId) => {
-    setSelectedService(serviceId);
     setCurrentView(serviceId);
     window.scrollTo(0, 0); // Scroll to top when viewing service
   };

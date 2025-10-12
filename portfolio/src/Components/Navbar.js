@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 
 export default function Navbar({ isScrolling, onShowGetInTouch }) {
@@ -26,9 +26,9 @@ export default function Navbar({ isScrolling, onShowGetInTouch }) {
       <div className="navbar-container">
         {/* Portfolio Label - Left Side */}
         <div className="navbar-brand">
-          <a href="" onClick={() => scrollToSection('home')} className="brand-link">
+          <button onClick={() => scrollToSection('home')} className="brand-link">
             Mobile App Developer
-          </a>
+          </button>
         </div>
 
         {/* Navigation Links - Right Side */}
@@ -39,9 +39,9 @@ export default function Navbar({ isScrolling, onShowGetInTouch }) {
           <a href="#about" onClick={() => scrollToSection('about')} className="navbar-link">
             About
           </a>
-          <a onClick={onShowGetInTouch} className="navbar-link contact-btn">
+          <button onClick={onShowGetInTouch} className="navbar-link contact-btn">
             Get in touch
-          </a>
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -60,9 +60,9 @@ export default function Navbar({ isScrolling, onShowGetInTouch }) {
         <a href="#about" onClick={() => scrollToSection('about')} className="mobile-link">
           About
         </a>
-        <a onClick={onShowGetInTouch} className="mobile-link">
+        <button onClick={onShowGetInTouch} className="mobile-link">
           Get in touch
-        </a>
+        </button>
       </div>
     </nav>
   )

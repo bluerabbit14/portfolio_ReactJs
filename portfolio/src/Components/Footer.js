@@ -45,12 +45,12 @@ export default function Footer({ onServiceClick }) {
             <div className="footer-section">
               <h3 className="footer-section-title">Services</h3>
               <ul className="footer-links">
-                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('mobile-app-development'); }}>Mobile App Development</a></li>
-                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('web-development'); }}>Web Development</a></li>
-                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('ui-ux-design'); }}>UI/UX Design</a></li>
-                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('api-development'); }}>API Development</a></li>
-                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('database-design'); }}>Database Design</a></li>
-                <li><a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); onServiceClick && onServiceClick('ai-bot'); }}>AI Bot</a></li>
+                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('mobile-app-development')}>Mobile App Development</button></li>
+                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('web-development')}>Web Development</button></li>
+                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('ui-ux-design')}>UI/UX Design</button></li>
+                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('api-development')}>API Development</button></li>
+                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('database-design')}>Database Design</button></li>
+                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('ai-bot')}>AI Bot</button></li>
               </ul>
             </div>
           </div>
@@ -92,11 +92,11 @@ export default function Footer({ onServiceClick }) {
                 Copyright © 2025 Asif Abbas. All rights reserved.
               </p>
               <div className="footer-legal-links">
-                <a href="#" className="footer-legal-link">Terms of Use</a>
+                <a href="/terms" className="footer-legal-link">Terms of Use</a>
                 <span className="footer-separator">•</span>
-                <a href="#" className="footer-legal-link">Privacy Policy</a>
+                <a href="/privacy" className="footer-legal-link">Privacy Policy</a>
                 <span className="footer-separator">•</span>
-                <a href="#" className="footer-legal-link">Agreements</a>
+                <a href="/agreements" className="footer-legal-link">Agreements</a>
               </div>
             </div>
 
