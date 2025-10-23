@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Navbar.css'
 
 export default function Navbar({ isScrolling, onShowGetInTouch }) {
@@ -12,6 +12,20 @@ export default function Navbar({ isScrolling, onShowGetInTouch }) {
     setIsMenuOpen(false)
   }
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -23,11 +37,17 @@ export default function Navbar({ isScrolling, onShowGetInTouch }) {
 
   return (
     <nav className="navbar">
+      {/* Mobile Menu Background Overlay */}
+      <div 
+        className={`mobile-menu-overlay ${isMenuOpen ? 'active' : ''}`}
+        onClick={closeMenu}
+      ></div>
+      
       <div className="navbar-container">
         {/* Portfolio Label - Left Side */}
         <div className="navbar-brand">
           <button onClick={() => scrollToSection('home')} className="brand-link">
-            Mobile App Developer
+            DevApp
           </button>
         </div>
 

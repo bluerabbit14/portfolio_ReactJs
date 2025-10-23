@@ -5,22 +5,36 @@ export default function SpecialistStack() {
   const specialistSkills = [
     {
       id: 1,
-      name: "React",
-      icon: "/Assets/react.png",
-      description: "Frontend Development"
+      name: ".NET MAUI",
+      icon: "/Assets/dotnet_bot.png"
     },
     {
       id: 2,
-      name: "Node.js",
-      icon: "/Assets/Node.js.png"
+      name: "React",
+      icon: "/Assets/React.png"
     },
     {
       id: 3,
-      name: "MySQL",
-      icon: "/Assets/MySQL.png"
+      name: "MS-SQL",
+      icon: "/Assets/Microsoft SQL Server.png"
     },
     {
       id: 4,
+      name: "Firebase",
+      icon: "/Assets/Firebase.png"
+    },
+    {
+      id: 5,
+      name: "Docker",
+      icon: "/Assets/Docker.png"
+    },
+    {
+      id: 7,
+      name: "Postman",
+      icon: "/Assets/Postman.png"
+    },
+    {
+      id: 6,
       name: "Figma",
       icon: "/Assets/Figma.png"
     }

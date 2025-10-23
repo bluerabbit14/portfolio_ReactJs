@@ -8,12 +8,12 @@
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   z-index: 1000;
   animation: fadeIn 0.3s ease-out;
   overflow-y: auto;
-  padding: 20px 0px;
+  padding: 20px;
 }
 
 @keyframes fadeIn {
@@ -30,7 +30,7 @@
   border-radius: 12px;
   width: 100%;
   max-width: 700px;
-  margin: 20px auto;
+  margin: 0;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   animation: slideIn 0.3s ease-out;
   display: flex;
@@ -299,9 +299,13 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .modal-overlay {
+    padding: 15px;
+  }
+  
   .modal-content {
-    width: 95%;
-    margin: 20px;
+    width: 100%;
+    margin: 0;
   }
   
   .modal-header {
@@ -311,15 +315,19 @@
   .modal-body {
     padding: 20px;
   }
-  
 }
 
 @media (max-width: 480px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+  
   .modal-content {
     width: 100%;
-    height: 100%;
-    border-radius: 0;
-    max-height: 100vh;
+    height: auto;
+    border-radius: 12px;
+    max-height: 90vh;
+    overflow-y: auto;
   }
   
   .modal-header {
@@ -329,7 +337,6 @@
   .modal-body {
     padding: 16px;
   }
-  
   
   .modal-title {
     font-size: 16px;

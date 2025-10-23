@@ -3,7 +3,6 @@ import Navbar from './Components/Navbar';
 import Hero from './Components/Hero';
 import Project from './Components/Project';
 import About from './Components/About';
-import Skill from './Components/Skill';
 import Footer from './Components/Footer';
 import GetInTouchForm from './Components/GetInTouchForm';
 import ProjectDetail from './Components/ProjectDetail';
@@ -11,10 +10,10 @@ import MobileDevelopment from './Components/MobileDevelopment';
 import WebDevelopment from './Components/WebDevelopment';
 import UIUXDesign from './Components/UIUXDesign';
 import APIDevelopment from './Components/APIDevelopment';
-import DatabaseDesign from './Components/DatabaseDesign';
 import AIBot from './Components/AIBot';
+import TermsOfUse from './Components/TermsOfUse';
+import PrivacyPolicy from './Components/PrivacyPolicy';
 import './App.css';
-import SpecialistStack from './Components/SpecialistStack';
 
 function App() {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -81,11 +80,14 @@ function App() {
   if (currentView === 'api-development') {
     return <APIDevelopment onBack={handleBackToHome} />;
   }
-  if (currentView === 'database-design') {
-    return <DatabaseDesign onBack={handleBackToHome} />;
-  }
   if (currentView === 'ai-bot') {
     return <AIBot onBack={handleBackToHome} />;
+  }
+  if (currentView === 'terms-of-use') {
+    return <TermsOfUse onBack={handleBackToHome} />;
+  }
+  if (currentView === 'privacy-policy') {
+    return <PrivacyPolicy onBack={handleBackToHome} />;
   }
 
   // Otherwise show main portfolio
@@ -97,10 +99,8 @@ function App() {
       />
       <Hero onShowGetInTouch={() => setShowGetInTouch(true)}></Hero>
       <About onShowGetInTouch={() => setShowGetInTouch(true)}></About>
-      <Skill></Skill>
-      <Project onProjectClick={handleProjectClick}></Project>
-      <SpecialistStack></SpecialistStack>
-      <Footer onServiceClick={handleServiceClick}></Footer>
+      <Project onProjectClick={handleProjectClick}></Project>      
+      <Footer onServiceClick={handleServiceClick} onShowGetInTouch={() => setShowGetInTouch(true)}></Footer>
       
       {/* GetInTouch Form Modal */}
       <GetInTouchForm 

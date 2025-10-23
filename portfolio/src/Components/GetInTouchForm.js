@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import emailjs from '@emailjs/browser'
+import { EMAILJS_CONFIG } from '../config/emailjs'
 import './GetInTouchForm.css'
 
 export default function GetInTouchForm({ isOpen, onClose }) {
@@ -8,32 +10,63 @@ export default function GetInTouchForm({ isOpen, onClose }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', or null
 
-  const handleSubmit = (e) => {
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init(EMAILJS_CONFIG.publicKey)
+  }, [])
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus(null)
 
     try {
-      // Create mailto link with pre-filled content
-      const subject = encodeURIComponent(`Contact from ${name}`)
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
-      const mailtoLink = `mailto:asifabbas.dev@gmail.com?subject=${subject}&body=${body}`
-      
-      // Open default email client
-      window.location.href = mailtoLink
+      // Owner email template parameters (sent to you)
+      const ownerTemplateParams = {
+        name: name,
+        email: email,
+        message: message,
+        to_email: '14asifcr7@gmail.com',
+        reply_to: email
+      }
+
+      // User confirmation email template parameters (sent to user)
+      const userTemplateParams = {
+        name: name,
+        email: email,
+        to_email: email
+      }
+
+      // Send both emails using EmailJS
+      const ownerEmailPromise = emailjs.send(
+        EMAILJS_CONFIG.serviceId, 
+        EMAILJS_CONFIG.templates.owner, 
+        ownerTemplateParams, 
+        EMAILJS_CONFIG.publicKey
+      )
+
+      const userEmailPromise = emailjs.send(
+        EMAILJS_CONFIG.serviceId, 
+        EMAILJS_CONFIG.templates.user, 
+        userTemplateParams, 
+        EMAILJS_CONFIG.publicKey
+      )
+
+      // Wait for both emails to be sent
+      await Promise.all([ownerEmailPromise, userEmailPromise])
       
       setSubmitStatus('success')
       // Reset form
       setName('')
       setEmail('')
       setMessage('')
-      // Close modal after 2 seconds
+      // Close modal after 3 seconds
       setTimeout(() => {
         onClose()
         setSubmitStatus(null)
-      }, 2000)
+      }, 3000)
     } catch (error) {
-      console.error('Error opening email client:', error)
+      console.error('Error sending email:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -85,8 +118,8 @@ export default function GetInTouchForm({ isOpen, onClose }) {
             <div className="status-message success">
               <div className="status-icon">✓</div>
               <div className="status-text">
-                <h3>Email Client Opened!</h3>
-                <p>Your default email client has opened with a pre-filled message. Please send the email to complete your contact request.</p>
+                <h3>Message Sent Successfully!</h3>
+                <p>Thank you for reaching out! Your message has been sent and a confirmation email has been sent to your inbox. I'll get back to you within 24 hours.</p>
               </div>
             </div>
           )}

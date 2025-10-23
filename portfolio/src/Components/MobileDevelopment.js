@@ -23,19 +23,19 @@ export default function MobileDevelopment({ onBack }) {
       {/* Hero Section */}
       <div className="mobile-development-hero">
         <div className="service-icon">📱</div>
-        <h1 className="service-title">Mobile App Development</h1>
-        <p className="service-description">Creating powerful, cross-platform mobile applications for iOS and Android using modern frameworks and technologies.</p>
+        <h1 className="service-title">Mobile Development</h1>
+        <p className="service-description">Creating innovative, user-friendly mobile applications for iOS and Android platforms using cutting-edge technologies and modern development practices.</p>
         
         <div className="service-overview">
           <h2>Service Overview</h2>
           <div className="service-text">
-            <p>Mobile app development is at the heart of modern digital experiences. I specialize in creating robust, scalable, and user-friendly mobile applications that work seamlessly across iOS and Android platforms.</p>
+            <p>Mobile development is at the forefront of digital innovation, reaching users wherever they are. I specialize in creating native and cross-platform mobile applications that deliver exceptional user experiences and drive business growth.</p>
             
-            <p>Using cutting-edge technologies like React Native, .NET MAUI, and Flutter, I develop applications that provide native performance while maintaining code efficiency. My approach focuses on creating intuitive user interfaces, smooth animations, and responsive designs that adapt to various screen sizes and orientations.</p>
+            <p>My expertise spans both native iOS and Android development, as well as cross-platform solutions using React Native and Flutter. I focus on creating apps that are not only visually appealing but also performant, secure, and user-friendly across all devices.</p>
             
-            <p>I have extensive experience in integrating complex features such as real-time data synchronization, push notifications, offline functionality, and secure authentication systems. Whether it's a simple utility app or a complex enterprise solution, I ensure that every application meets the highest standards of performance, security, and user experience.</p>
+            <p>I specialize in building apps with offline capabilities, push notifications, real-time data synchronization, and seamless integration with backend services. Every mobile app I develop includes proper state management, navigation, and platform-specific optimizations.</p>
             
-            <p>My mobile development process includes thorough testing across different devices and operating systems, ensuring compatibility and optimal performance. I also provide ongoing maintenance and updates to keep your applications current with the latest platform requirements and user expectations.</p>
+            <p>From simple utility apps to complex enterprise solutions and e-commerce platforms, I deliver mobile applications that meet modern standards for performance, security, and user experience. My development process includes thorough testing, app store optimization, and ongoing maintenance.</p>
           </div>
         </div>
 
@@ -43,29 +43,29 @@ export default function MobileDevelopment({ onBack }) {
           <h2>Technologies Used</h2>
           <div className="technologies-grid">
             <span className="tech-tag">React Native</span>
-            <span className="tech-tag">.NET MAUI</span>
             <span className="tech-tag">Flutter</span>
+            <span className="tech-tag">Swift</span>
+            <span className="tech-tag">Kotlin</span>
+            <span className="tech-tag">Java</span>
             <span className="tech-tag">JavaScript</span>
             <span className="tech-tag">TypeScript</span>
-            <span className="tech-tag">C#</span>
-            <span className="tech-tag">Android</span>
-            <span className="tech-tag">iOS</span>
+            <span className="tech-tag">Dart</span>
             <span className="tech-tag">Firebase</span>
-            <span className="tech-tag">Xamarin</span>
+            <span className="tech-tag">Redux</span>
           </div>
         </div>
 
         <div className="service-features">
           <h2>Key Features</h2>
           <ul className="features-list">
-            <li>Cross-platform development for iOS and Android</li>
-            <li>Native performance with shared codebase</li>
-            <li>Real-time data synchronization</li>
-            <li>Push notifications and offline support</li>
-            <li>Secure authentication and authorization</li>
+            <li>Cross-platform development (iOS & Android)</li>
+            <li>Native performance optimization</li>
+            <li>Offline functionality and data sync</li>
+            <li>Push notifications and real-time updates</li>
+            <li>Secure authentication and data protection</li>
+            <li>App store deployment and optimization</li>
             <li>Responsive design for all screen sizes</li>
-            <li>App store optimization and deployment</li>
-            <li>Performance monitoring and analytics</li>
+            <li>Integration with backend APIs and services</li>
           </ul>
         </div>
 
@@ -74,7 +74,7 @@ export default function MobileDevelopment({ onBack }) {
           <ul className="process-list">
             <li>
               <span className="process-number">1</span>
-              <span className="process-text">Requirements analysis and planning</span>
+              <span className="process-text">Requirements analysis and platform selection</span>
             </li>
             <li>
               <span className="process-number">2</span>
@@ -82,19 +82,19 @@ export default function MobileDevelopment({ onBack }) {
             </li>
             <li>
               <span className="process-number">3</span>
-              <span className="process-text">Architecture design and technology selection</span>
+              <span className="process-text">App architecture and development</span>
             </li>
             <li>
               <span className="process-number">4</span>
-              <span className="process-text">Development and testing</span>
+              <span className="process-text">Backend integration and API development</span>
             </li>
             <li>
               <span className="process-number">5</span>
-              <span className="process-text">App store submission and deployment</span>
+              <span className="process-text">Testing and quality assurance</span>
             </li>
             <li>
               <span className="process-number">6</span>
-              <span className="process-text">Maintenance and updates</span>
+              <span className="process-text">App store submission and deployment</span>
             </li>
           </ul>
         </div>
@@ -104,20 +104,20 @@ export default function MobileDevelopment({ onBack }) {
           <div className="projects-grid">
             <div className="project-card">
               <h3>Investorly Mobile App</h3>
-              <p>Cross-platform investment tracking application with real-time portfolio management and secure authentication.</p>
+              <p>Cross-platform investment tracking application with real-time portfolio management, market data integration, and secure user authentication.</p>
               <div className="project-tech">
                 <span className="tech-badge">React Native</span>
                 <span className="tech-badge">Firebase</span>
-                <span className="tech-badge">JWT</span>
+                <span className="tech-badge">Redux</span>
               </div>
             </div>
             <div className="project-card">
-              <h3>Hotel Revenue Tracker</h3>
-              <p>Mobile solution for tracking hotel investments and revenue data with interactive charts and analytics.</p>
+              <h3>E-Commerce Mobile App</h3>
+              <p>Feature-rich shopping application with payment integration, order tracking, and personalized recommendations for enhanced user experience.</p>
               <div className="project-tech">
-                <span className="tech-badge">.NET MAUI</span>
-                <span className="tech-badge">C#</span>
-                <span className="tech-badge">PostgreSQL</span>
+                <span className="tech-badge">Flutter</span>
+                <span className="tech-badge">Dart</span>
+                <span className="tech-badge">Stripe API</span>
               </div>
             </div>
           </div>
@@ -126,8 +126,3 @@ export default function MobileDevelopment({ onBack }) {
     </div>
   )
 }
-
-
-
-
-

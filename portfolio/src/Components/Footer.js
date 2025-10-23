@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
 
-export default function Footer({ onServiceClick }) {
+export default function Footer({ onServiceClick, onShowGetInTouch }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -14,12 +14,12 @@ export default function Footer({ onServiceClick }) {
           {/* Column 1 - Platforms */}
           <div className="footer-column">
             <div className="footer-section">
-              <h3 className="footer-section-title">Platforms</h3>
+              <h3 className="footer-section-title">Contents</h3>
               <ul className="footer-links">
                 <li><a href="#home" className="footer-link">Home</a></li>
                 <li><a href="#projects" className="footer-link">Projects</a></li>
                 <li><a href="#about" className="footer-link">About</a></li>
-                <li><a href="#skills" className="footer-link">Skills</a></li>
+                <li><button className="footer-link" onClick={() => onShowGetInTouch && onShowGetInTouch()}>Contact</button></li>
               </ul>
             </div>
           </div>
@@ -35,7 +35,6 @@ export default function Footer({ onServiceClick }) {
                 <li><a href="https://firebase.google.com/?_gl=1*1acyu1f*_up*MQ..&gclid=Cj0KCQjwl5jHBhDHARIsAB0YqjxO14dvvLVVN48jwhv3jTqenpmI3_QbDTP0xjJGa5yJyi_60q9WFtYaAhaVEALw_wcB&gclsrc=aw.ds&gbraid=0AAAAADpUDOjWpRCjOJ3XI4egR6U_4Dlvh" className="footer-link">Firebase</a></li>
                 <li><a href="https://www.figma.com/make/?gclsrc=aw.ds&&utm_source=google&utm_medium=cpc&utm_campaign=22570738050&utm_term=figma&utm_content=753197128699&utm_adgroup=182267200240&gad_source=1&gad_campaignid=22570738050&gbraid=0AAAAACTf0kMq6feR_9b2TBj9yaIJ1Vak5&gclid=Cj0KCQjwl5jHBhDHARIsAB0Yqjx141BBg-0y_EmrVzpfhOtvDp893PnYtECPcw6OZaDrq0H07eGuRncaAkZUEALw_wcB" className="footer-link">Figma</a></li>                
                 <li><a href="https://www.microsoft.com/en-in/sql-server" className="footer-link">Microsoft SQL Server</a></li>
-                <li><a href="https://www.mysql.com/" className="footer-link">MySQL</a></li>
               </ul>
             </div>
           </div>
@@ -45,12 +44,11 @@ export default function Footer({ onServiceClick }) {
             <div className="footer-section">
               <h3 className="footer-section-title">Services</h3>
               <ul className="footer-links">
-                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('mobile-app-development')}>Mobile App Development</button></li>
-                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('web-development')}>Web Development</button></li>
-                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('ui-ux-design')}>UI/UX Design</button></li>
-                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('api-development')}>API Development</button></li>
-                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('database-design')}>Database Design</button></li>
-                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('ai-bot')}>AI Bot</button></li>
+                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('')}>Mobile App Development</button></li>
+                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('')}>Web Development</button></li>
+                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('')}>UI/UX Design</button></li>
+                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('')}>API Development</button></li>
+                <li><button className="footer-link" onClick={() => onServiceClick && onServiceClick('')}>AI Bot</button></li>
               </ul>
             </div>
           </div>
@@ -91,32 +89,28 @@ export default function Footer({ onServiceClick }) {
               <p className="footer-copyright">
                 Copyright © 2025 Asif Abbas. All rights reserved.
               </p>
-              <div className="footer-legal-links">
-                <a href="/terms" className="footer-legal-link">Terms of Use</a>
+              {/* will apply later */}
+              {/* <div className="footer-legal-links">
+                <button className="footer-legal-link" onClick={() => onServiceClick && onServiceClick('terms-of-use')}>Terms of Use</button>
                 <span className="footer-separator">•</span>
-                <a href="/privacy" className="footer-legal-link">Privacy Policy</a>
-                <span className="footer-separator">•</span>
-                <a href="/agreements" className="footer-legal-link">Agreements</a>
-              </div>
+                <button className="footer-legal-link" onClick={() => onServiceClick && onServiceClick('privacy-policy')}>Privacy Policy</button>
+              </div> */}
             </div>
 
             {/* Right Side */}
             <div className="footer-bottom-right">
               <div className="footer-controls">
                 {/* Theme Switcher */}
-                {/* <div className="theme-switcher">
-                  <button className="theme-btn active">Light</button>
-                  <button className="theme-btn">Dark</button>
-                  <button className="theme-btn">Auto</button>
-                </div> */}
+                 <div className="theme-switcher">
+                 
+                </div>
                 
-                {/* Language Selector */}
-                {/* <div className="language-selector">
-                  <span className="language-text">English</span>
-                  <svg className="language-chevron" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-                    <path d="M6 8L2 4h8l-4 4z"/>
-                  </svg>
-                </div> */}
+                {/* Brand */}
+                 <div className="footer-brand">
+                   <div className="footer-brand-text">
+                     DevApp
+                   </div>
+                </div> 
 
               
               </div>

@@ -1,17 +1,20 @@
 import React, { useRef, useState } from 'react'
 import './Hero.css'
+import SpecialistStack from './SpecialistStack'
 
 export default function Hero({ onShowGetInTouch }) {
   const videoRef = useRef(null)
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
+  const [showDownloadNotification, setShowDownloadNotification] = useState(false)
 
   // Array of video sources
   const videos = [
-    
     { src: "/Assets/AppDevelopment.mp4", title: "App Development" },
     { src: "/Assets/UIDesign.mp4", title: "UI Design" },
-    { src: "/Assets/WebDevelopment.mp4", title: "Web Development" }
+    { src: "/Assets/WebDevelopment.mp4", title: "Web Development" },
+    { src: "/Assets/APIDevelopment.mp4", title: "API Development" },
+    { src: "/Assets/AIchatandBot.mp4", title: "AI Bot" }
   ]
 
   const switchVideo = (index) => {
@@ -41,6 +44,14 @@ export default function Hero({ onShowGetInTouch }) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
   }
+
+  const handleDownload = () => {
+    setShowDownloadNotification(true)
+    setTimeout(() => {
+      setShowDownloadNotification(false)
+    }, 3000) // Hide notification after 3 seconds
+  }
+
   return (
     <section id="home" className="hero">
       <div className="hero-container">
@@ -50,22 +61,13 @@ export default function Hero({ onShowGetInTouch }) {
           <p className="hero-subtitle">Expert in cross-platform development using .NET MAUI & React.
           I design sleek UIs, craft powerful APIs, and launch scalable mobile apps.</p>
           
-          {/* Customer Review/Project Count */}
-          <div className="hero-stats">
-            <div className="stats-number">18+</div>
-            <div className="stats-circles">
-              <div className="circle"></div>
-              <div className="circle"></div>
-              <div className="circle"></div>
-            </div>
-            <div className="stats-text">customer review</div>
-          </div>
-          
           {/* Call to Action Buttons */}
           <div className="hero-buttons">
             <button onClick={scrollToProjects} className="hero-btn outline">View Work</button>
-            <button onClick={onShowGetInTouch} className="hero-btn filled">Get in touch</button>
+            <a href="/Assets/ASIF ABBAS RESUME.pdf" download="Asif Abbas Resume.pdf" onClick={handleDownload} className="hero-btn filled">Download Resume</a>
           </div>
+
+          <SpecialistStack />
           
           {/* Video Section */}
           <div className="hero-video-section">
@@ -123,6 +125,16 @@ export default function Hero({ onShowGetInTouch }) {
         <a href="https://github.com/bluerabbit14/" className="social-link">Github</a>
         <a href="https://www.instagram.com/being.sif/" className="social-link">Instagram</a>
       </div>
+      
+      {/* Download Success Notification */}
+      {showDownloadNotification && (
+        <div className="download-notification">
+          <div className="notification-content">
+            <div className="notification-icon">✓</div>
+            <span className="notification-text">Resume Downloaded!</span>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
