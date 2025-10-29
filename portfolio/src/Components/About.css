@@ -565,3 +565,51 @@
   }
 }
 
+@media (max-width: 420px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .about-content {
+    order: 2;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .about-visual {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .about-image-container {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+  
+  .about-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  .about-description {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .about-stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px 0;
+  }
+  
+  .about-role {
+    justify-content: center;
+  }
+}
+

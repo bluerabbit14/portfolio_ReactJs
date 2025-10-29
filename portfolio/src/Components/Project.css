@@ -648,22 +648,49 @@
 
 @media (max-width: 360px) {
   .project {
-    padding: 80px 10px 50px 10px;
+    padding: 20px 10px 50px 10px;
   }
   
   .project-main-title {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
   
+  .project-description {
+    font-size: 0.6rem;
+    text-align: left;
+}
+.card-subtitle {
+  font-size: 6px;
+  padding: 4px 8px;
+  margin-bottom: 8px;
+}
   .project-card {
     padding: 20px 10px;
   }
   
   .card-title {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
   }
-  
+  .cta-button {
+    padding: 6px 0px;
+    font-size: 8px;
+}
+
+  .card-description {
+    font-size: 0.5rem;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+}
+
   .project-image-1 {
-    height: 200px;
-  }
+    width: 140px;
+    border-radius: 50%;
+    height: 140px;
+}
 }

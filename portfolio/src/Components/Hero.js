@@ -64,7 +64,7 @@ export default function Hero({ onShowGetInTouch }) {
           {/* Call to Action Buttons */}
           <div className="hero-buttons">
             <button onClick={scrollToProjects} className="hero-btn outline">View Work</button>
-            <a href="/Assets/ASIF ABBAS RESUME.pdf" download="Asif Abbas Resume.pdf" onClick={handleDownload} className="hero-btn filled">Download Resume</a>
+            <a href="/Assets/ASIF ABBAS RESUME.pdf" download="Asif Abbas Resume.pdf" onClick={handleDownload} className="hero-btn filled">Resume</a>
           </div>
 
           <SpecialistStack />

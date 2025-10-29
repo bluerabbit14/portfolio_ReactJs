@@ -159,7 +159,7 @@
     padding: 4px 6px;
     gap: 2px;
     border-radius: 18px;
-    height: 32px;
+    height: 34px;
   }
   
   .video-selection-btn {
@@ -190,32 +190,32 @@
     padding: 3px 4px;
     gap: 1px;
     border-radius: 12px;
-    height: 28px;
+    height: 32px;
   }
   
   .video-selection-btn {
-    padding: 2px 6px;
-    font-size: 9px;
+    padding: 0px 6px;
+    font-size: 8px;
     border-radius: 8px;
-    height: 22px;
+    height: 20px;
     line-height: 1;
   }
 }
 
 @media (max-width: 360px) {
   .video-selection-bar {
-    bottom: -30px;
+    bottom: -40px;
     padding: 2px 3px;
     gap: 1px;
     border-radius: 10px;
-    height: 24px;
+    height: 32px;
   }
   
   .video-selection-btn {
     padding: 1px 4px;
     font-size: 8px;
     border-radius: 6px;
-    height: 20px;
+    height: 14px;
     line-height: 1;
   }
 }
@@ -238,7 +238,7 @@
 
 .hero-btn.outline {
   background-color: transparent;
-  border: 2px solid #af4c68;
+  border: 1px solid #af4c68;
   color: #af4c68;
 }
 
@@ -372,16 +372,21 @@
 
 @media (max-width: 360px) {
   .hero {
-    padding: 80px 8px 50px 8px;
+    padding: 120px 8px 50px 8px;
   }
+
+  .video-play-pause-overlay {
+    width: 28px;
+    height: 28px;
+}
   
   .hero-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 12px;
   }
   
   .hero-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     margin-bottom: 10px;
   }
   
@@ -392,15 +397,15 @@
   }
   
   .hero-btn {
-    padding: 5px 10px;
-    font-size: 0.75rem;
-    min-height: 32px;
+    padding: 5px 8px;
+    font-size: 0.6rem;
+    min-height: 28px;
   }
   
   .hero-video-container {
-    max-width: 250px;
-    height: 150px;
-    margin-top: 10px;
+    max-width: 300px;
+    height: 180px;
+    margin-top: -30px;
   }
   
   .video-play-pause-overlay {
