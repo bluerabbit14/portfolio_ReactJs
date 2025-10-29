@@ -330,13 +330,13 @@
   }
   
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.1;
     margin-bottom: 15px;
   }
   
   .hero-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
     margin-bottom: 12px;
   }
   
@@ -347,15 +347,15 @@
   }
   
   .hero-btn {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-    min-height: 36px;
+    padding: 6px 10px;
+    font-size: 0.6rem;
+    min-height: 28px;
   }
   
   .hero-video-container {
     width: 100%;
-    max-width: 280px;
-    height: 180px;
+    max-width: 330px;
+    height: 230px;
     margin-top: 12px;
   }
   

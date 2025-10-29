@@ -44,7 +44,7 @@ export default function Project({ onProjectClick }) {
               </h2>
               <p className="card-description">
                 Investorly is a cross-platform mobile app for Android and iOS that helps users track investment portfolios and hotel revenue data. It features interactive charts, tables, and trend views, with secure authentication using JWT and Google OAuth for both investors and portfolio managers.
-                <br/>
+                <br/><br/>
                 The app integrates with ASP.NET Core APIs and PostgreSQL, with Firebase used for demo hosting and versioning. I developed the mobile app independently while collaborating on backend integration, delivering a streamlined solution for tracking hotel investments and financial performance.
               </p>
               <button className="cta-button" onClick={() => handleReadMore('investorly-mobile')}>Read More</button>
@@ -61,7 +61,7 @@ export default function Project({ onProjectClick }) {
               </h2>
               <p className="card-description">
               Gemini AI Chat is a modern, interactive web application inspired by Google Gemini's interface. Built using HTML5, CSS3, and vanilla JavaScript (ES6+), it offers real-time AI conversations, responsive design, and smooth animations to deliver a clean, intuitive user experience.
-                <br/>
+                <br/><br/>
                 The app connects to the Gemini (Gemma) model via the OpenRouter API using secure bearer token authentication and RESTful calls. With a lightweight, dependency-free architecture and offline chat persistence, this project emphasizes speed, privacy, and accessibility across platforms.
               </p>
               <button className="cta-button" onClick={() => handleReadMore('gemini-ai-chat')}>Read More</button>
@@ -94,7 +94,7 @@ export default function Project({ onProjectClick }) {
               </h2>
               <p className="card-description">
                 Investorly is a cross-platform mobile app for Android and iOS that helps users track investment portfolios and hotel revenue data. It features interactive charts, tables, and trend views, with secure authentication using JWT and Google OAuth for both investors and portfolio managers.
-                <br/>
+                <br/> <br/>
                 The app integrates with ASP.NET Core APIs and PostgreSQL, with Firebase used for demo hosting and versioning. I developed the mobile app independently while collaborating on backend integration, delivering a streamlined solution for tracking hotel investments and financial performance.
               </p>
               <button className="cta-button" onClick={() => handleReadMore('investorly-web')}>Read More</button>
@@ -110,7 +110,7 @@ export default function Project({ onProjectClick }) {
               </h2>
               <p className="card-description">
               Orama API is a RESTful backend service built with ASP.NET Core 9.0, C#, and SQL Server to support secure user registration, authentication, and role-based authorization. It includes robust features like JWT-based login, OTP email verification, and password hashing to protect user data.
-                <br/>
+                <br/><br/>
                 The backend follows Clean Architecture principles, organizing logic into controllers, services, interfaces, and data layers for better maintainability and scalability. Swagger/OpenAPI is integrated for live API documentation, and Entity Framework Core handles seamless interaction with SQL Server.
               </p>
               <button className="cta-button" onClick={() => handleReadMore('orama-api')}>Read More</button>

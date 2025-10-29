@@ -93,18 +93,32 @@
 }
 
 @media (max-width: 480px) {
+  .specialist-stack-content {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
   .skills-horizontal-strip {
-    gap: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+    overflow-x: visible;
   }
   
   .skill-item {
     flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .skill-icon {
-    width: 30px;
-    height: 30px;
-    filter: grayscale(100%) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    width: 35px;
+    height: 35px;
+    filter: grayscale(0%) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   }
   
   .skill-name {
