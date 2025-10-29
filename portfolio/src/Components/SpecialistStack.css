@@ -18,7 +18,9 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 1rem 0;
 }
 
 .skill-item {
@@ -39,7 +41,7 @@
   width: 60px;
   height: 60px;
   object-fit: contain;
-  filter: grayscale(100%) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  filter: grayscale(0%) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .skill-info {
@@ -61,8 +63,7 @@
   }
   
   .skill-item {
-    width: 220px;
-    padding: 1.25rem 1.5rem;
+    flex-shrink: 0;
   }
 }
 
@@ -71,42 +72,42 @@
     padding: 1rem;
   }
   
-  
   .skills-horizontal-strip {
-    flex-direction: column;
     gap: 1rem;
+    padding: 0.5rem 0;
   }
   
   .skill-item {
-    min-width: 80px;
-    padding: 1rem 1.5rem;
+    flex-shrink: 0;
   }
   
   .skill-icon {
-    width: 35px;
-    height: 35px;
-    filter: grayscale(100%) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    width: 45px;
+    height: 45px;
+    filter: grayscale(0%) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   }
   
   .skill-name {
     font-size: 1rem;
   }
-  
 }
 
 @media (max-width: 480px) {
-  .specialist-title {
-    font-size: 1.75rem;
+  .skills-horizontal-strip {
+    gap: 0.8rem;
   }
   
   .skill-item {
-    min-width: 100%;
-    padding: 1rem;
+    flex-shrink: 0;
   }
   
   .skill-icon {
     width: 30px;
     height: 30px;
     filter: grayscale(100%) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+  
+  .skill-name {
+    font-size: 0.9rem;
   }
 }

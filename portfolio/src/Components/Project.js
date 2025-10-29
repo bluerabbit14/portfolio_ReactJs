@@ -17,12 +17,7 @@ export default function Project({ onProjectClick }) {
         </div>
         
         <div className="project-title-section">
-          <div className="project-icon">
-            <div className="sun-icon">
-              <div className="sun-center"></div>
-              <div className="sun-rays"></div>
-            </div>
-          </div>
+        
           <h1 className="project-main-title">PROJECTS</h1>
           <p className="project-description">
           Developed a responsive web application that allows users to track daily tasks with real-time updates and cloud-based storage. Built using React, Firebase, and Material UI to ensure performance and scalability.

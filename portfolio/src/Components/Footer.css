@@ -183,14 +183,24 @@
 /* Responsive Design */
 @media (max-width: 1200px) {
   .footer-content {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
   }
   
   .footer-bottom-content {
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
     align-items: flex-start;
+  }
+
+  .scroll-to-top {
+    position: absolute;
+    right: 50px;
+  }
+
+  .footer-container {
+    margin: 0 auto;
+    padding: 0 40px;
   }
   
   .footer-controls {
@@ -204,9 +214,9 @@
   }
   
   .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    padding: 40px 0 30px 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 30px 0 20px 0;
   }
   
   .footer-column {
@@ -214,7 +224,7 @@
   }
   
   .footer-bottom-content {
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
     align-items: flex-start;
   }
@@ -225,7 +235,7 @@
   }
   
   .scroll-to-top {
-    right: -40px;
+    right: 40px;
     width: 36px;
     height: 36px;
   }

@@ -119,13 +119,6 @@ export default function Hero({ onShowGetInTouch }) {
         
       </div>
       
-      {/* Side Social Media Links */}
-      <div className="social-sidebar">
-        <a href="https://www.linkedin.com/in/asif-abbas-10260a213/" className="social-link">LinkedIn</a>
-        <a href="https://github.com/bluerabbit14/" className="social-link">Github</a>
-        <a href="https://www.instagram.com/being.sif/" className="social-link">Instagram</a>
-      </div>
-      
       {/* Download Success Notification */}
       {showDownloadNotification && (
         <div className="download-notification">

@@ -50,11 +50,6 @@
   transition: transform 0.3s ease;
 }
 
-
-.brand-link:hover {
-  
-}
-
 /* Navigation Links - Right Side */
 .navbar-links {
   display: flex;
@@ -123,7 +118,7 @@
 
 /* Mobile Menu Button */
 .mobile-menu-button {
-  display: none;
+  display: none !important;
   flex-direction: column;
   cursor: pointer;
   padding: 5px;
@@ -154,9 +149,14 @@
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  display: none !important;
+}
+
 /* Mobile Menu */
 .mobile-menu {
-  display: none;
+  display: none !important;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -217,15 +217,17 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar-links {
-    display: none;
+    display: flex;
+    gap: 20px;
   }
   
-  .mobile-menu-button {
-    display: flex;
+  .navbar-link {
+    font-size: 14px;
   }
   
-  .mobile-menu {
-    display: flex;
+  .navbar-link.contact-btn {
+    padding: 6px 12px;
+    font-size: 14px;
   }
   
   .navbar-container {
@@ -257,9 +259,17 @@
     height: 24px;
   }
   
-  .mobile-link {
-    font-size: 16px;
-    padding: 12px 0;
+  .navbar-links {
+    gap: 15px;
+  }
+  
+  .navbar-link {
+    font-size: 12px;
+  }
+  
+  .navbar-link.contact-btn {
+    padding: 5px 10px;
+    font-size: 12px;
   }
 }
 

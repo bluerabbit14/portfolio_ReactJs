@@ -60,10 +60,10 @@ export default function About({ onShowGetInTouch }) {
           
           
           {/* Call to Action Buttons */}
-          <div className="about-buttons">
+          {/* <div className="about-buttons">
             <button onClick={onShowGetInTouch} className="about-btn get-in-touch-btn">Get in Touch</button>
             <a href="/Assets/ASIF ABBAS RESUME.pdf" download="Asif Abbas Resume.pdf" onClick={handleDownload} className="about-btn-link">Download Resume</a>
-          </div>
+          </div> */}
         </div>
         
         {/* Right Side - Visual Content */}

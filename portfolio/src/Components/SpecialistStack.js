@@ -54,9 +54,6 @@ export default function SpecialistStack() {
                   className="skill-icon"
                 />
               </div>
-              <div className="skill-info">
-                <h3 className="skill-name">{skill.name}</h3>
-              </div>
             </div>
           ))}
         </div>
