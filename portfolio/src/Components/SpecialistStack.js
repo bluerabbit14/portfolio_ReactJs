@@ -37,6 +37,11 @@ export default function SpecialistStack() {
       id: 6,
       name: "Figma",
       icon: "/Assets/Figma.png"
+    },
+    {
+      id: 7,
+      name: "Flutter",
+      icon: "/Assets/Flutter.png"
     }
   ]
 
