@@ -27,33 +27,34 @@ export default function About({ onShowGetInTouch }) {
           </div>
           
           <p className="about-description">
-            Hi, I'm <strong>Asif Abbas</strong>, a passionate <strong>mobile app developer</strong>, 
-            <strong> cross-platform specialist</strong>, and <strong>UI/UX designer</strong> with a strong 
-            background in <strong>API development</strong>.  With a unique blend of technical and creative skills, I bridge the gap between
-            <em> functionality</em> and <em>visual appeal</em> — ensuring every product I build is not 
-            only efficient under the hood but also engaging to use.
+            Hi, I'm <strong>Asif Abbas</strong>, a passionate <strong>mobile app developer</strong> specializing in 
+            <strong> .NET MAUI</strong>, <strong>Flutter</strong>, and <strong>ASP.NET API</strong> development. 
+            I focus on developing cross-platform mobile applications using <strong>.NET MAUI</strong> with an emphasis on 
+            <strong> clean architecture</strong>, <strong>performance</strong>, and <strong>scalability</strong>. 
+            I integrate <strong>ASP.NET Core Web APIs</strong> and <strong>Firebase</strong> for secure backend services, 
+            including <strong>authentication</strong>, <strong>real-time data</strong>, and <strong>cloud hosting</strong>. 
+            Skilled in building responsive UI with <strong>React.js</strong> and delivering optimized, production-ready applications.
             <br /> <br />
-            I'm constantly exploring new tools, 
-            trends, and technologies to stay ahead in the fast-moving mobile landscape. Whether you're 
-            launching a startup or scaling a product, I'm here to help bring your vision to life.
+            Actively involved in the full <strong>SDLC</strong>: planning, development, testing, deployment, and optimization. 
+            Whether you're launching a startup or scaling a product, I'm here to help bring your vision to life.
           </p>
           
           {/* Stats Section */}
           <div className="about-stats">
             <div className="stats-item">
-              <div className="stats-number">7</div>
+              <div className="stats-number">9</div>
               <div className="stats-label">Completed<br />Projects</div>
             </div>
             <div className="stats-item">
-              <div className="stats-number">8+</div>
+              <div className="stats-number">9+</div>
               <div className="stats-label">Months in<br />Development</div>
             </div>
             <div className="stats-item">
-              <div className="stats-number">11+</div>
+              <div className="stats-number">13+</div>
               <div className="stats-label">Technology<br />Used</div>
             </div>
             <div className="stats-item">
-              <div className="stats-number">4</div>
+              <div className="stats-number">3</div>
               <div className="stats-label">Projects<br />In Production</div>
             </div>
           </div>

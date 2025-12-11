@@ -126,6 +126,11 @@
   gap: 60px;
   align-items: center;
   max-height: 400px;
+  flex-direction: row;
+}
+
+.card-content-reverse {
+  flex-direction: row-reverse;
 }
 
 .content-left {
@@ -133,7 +138,7 @@
 }
 
 .content-left.text-left {
-  margin-left: 40px;
+  margin-left: 0;
 }
 
 .content-right {
@@ -172,6 +177,12 @@
   color: #666;
   line-height: 1.6;
   margin: 0 0 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 12;
+  line-clamp: 12;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cta-button {
@@ -479,7 +490,8 @@
   }
   
   .projects-container {
-    gap: 100px;
+    gap: 200px;
+    margin-top: 200px;
     max-width: 1000px;
   }
   
@@ -539,6 +551,10 @@
     min-height: auto;
   }
   
+  .card-content-reverse {
+    flex-direction: row-reverse;
+  }
+  
   .content-left,
   .content-right {
     width: 100%;
@@ -560,6 +576,12 @@
   .card-description {
     font-size: 0.7rem;
     line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .project-image-1 {
@@ -603,6 +625,7 @@
   
   .projects-container {
     gap: 20px;
+    margin-top: 60px;
   }
   
   .project-card {

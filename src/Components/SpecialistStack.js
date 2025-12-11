@@ -23,23 +23,23 @@ export default function SpecialistStack() {
       name: "Firebase",
       icon: "/Assets/Firebase.png"
     },
+    // {
+    //   id: 5,
+    //   name: "Docker",
+    //   icon: "/Assets/Docker.png"
+    // },
     {
       id: 5,
-      name: "Docker",
-      icon: "/Assets/Docker.png"
-    },
-    {
-      id: 7,
       name: "Postman",
       icon: "/Assets/Postman.png"
     },
+    // {
+    //   id: 6,
+    //   name: "Figma",
+    //   icon: "/Assets/Figma.png"
+    // },
     {
       id: 6,
-      name: "Figma",
-      icon: "/Assets/Figma.png"
-    },
-    {
-      id: 7,
       name: "Flutter",
       icon: "/Assets/Flutter.png"
     }
