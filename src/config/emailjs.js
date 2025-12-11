@@ -1,14 +1,26 @@
 // EmailJS Configuration
-// Option 1: Replace these values with your actual EmailJS credentials
-// Option 2: Use environment variables (recommended for production)
+// All values are loaded from environment variables for security
+// Create a .env file in the root directory with your EmailJS credentials
+// See .env.example for the required variables
+
 export const EMAILJS_CONFIG = {
-  serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_clbj28z',
-  publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'rrsZ8pOpyI-5LfDdc',
+  serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+  publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
   // Template IDs for different email types
   templates: {
-    owner: process.env.REACT_APP_EMAILJS_OWNER_TEMPLATE_ID || 'message_to_owner',
-    user: process.env.REACT_APP_EMAILJS_USER_TEMPLATE_ID || 'message_to_user_autosend'
+    owner: process.env.REACT_APP_EMAILJS_OWNER_TEMPLATE_ID,
+    user: process.env.REACT_APP_EMAILJS_USER_TEMPLATE_ID
   }
+}
+
+// Portfolio owner email (where contact form messages are sent)
+export const OWNER_EMAIL = process.env.REACT_APP_OWNER_EMAIL
+
+// Validate that all required environment variables are set
+if (!EMAILJS_CONFIG.serviceId || !EMAILJS_CONFIG.publicKey || 
+    !EMAILJS_CONFIG.templates.owner || !EMAILJS_CONFIG.templates.user || 
+    !OWNER_EMAIL) {
+  console.warn('Warning: EmailJS environment variables are not fully configured. Please check your .env file.')
 }
 
 // Template parameters mapping

@@ -65,16 +65,20 @@ Asif Abbas
    - `YOUR_PUBLIC_KEY` with your actual Public Key
 
 ### Option B: Environment Variables (Recommended for Production)
-1. Create a `.env.local` file in your project root
+1. Create a `.env` file in your project root (same directory as package.json)
 2. Add your credentials:
    ```
    REACT_APP_EMAILJS_SERVICE_ID=your_service_id_here
+   REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key_here
    REACT_APP_EMAILJS_OWNER_TEMPLATE_ID=your_owner_template_id_here
    REACT_APP_EMAILJS_USER_TEMPLATE_ID=your_user_template_id_here
-   REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key_here
+   REACT_APP_OWNER_EMAIL=your_email@example.com
    ```
 3. The configuration will automatically use these environment variables
-4. **Important**: Never commit `.env.local` to version control
+4. **Important**: 
+   - Never commit `.env` to version control (it's already in .gitignore)
+   - Restart your development server after creating/updating the .env file
+   - All environment variables must start with `REACT_APP_` to be accessible in React
 
 ## 6. Test the Setup
 1. Start your React app: `npm start`

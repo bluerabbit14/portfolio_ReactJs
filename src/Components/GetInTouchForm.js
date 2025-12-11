@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
-import { EMAILJS_CONFIG } from '../config/emailjs'
+import { EMAILJS_CONFIG, OWNER_EMAIL } from '../config/emailjs'
 import './GetInTouchForm.css'
 
 export default function GetInTouchForm({ isOpen, onClose }) {
@@ -12,11 +12,27 @@ export default function GetInTouchForm({ isOpen, onClose }) {
 
   // Initialize EmailJS
   useEffect(() => {
-    emailjs.init(EMAILJS_CONFIG.publicKey)
+    if (EMAILJS_CONFIG.publicKey && EMAILJS_CONFIG.publicKey !== 'your_public_key_here') {
+      emailjs.init(EMAILJS_CONFIG.publicKey)
+    } else {
+      console.error('EmailJS Public Key is not configured. Please check your .env file and restart the development server.')
+    }
   }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    
+    // Validate EmailJS configuration
+    if (!EMAILJS_CONFIG.serviceId || !EMAILJS_CONFIG.publicKey || 
+        !EMAILJS_CONFIG.templates.owner || !EMAILJS_CONFIG.templates.user || 
+        !OWNER_EMAIL ||
+        EMAILJS_CONFIG.serviceId === 'your_service_id_here' ||
+        EMAILJS_CONFIG.publicKey === 'your_public_key_here') {
+      setSubmitStatus('error')
+      console.error('EmailJS is not properly configured. Please check your .env file and restart the development server.')
+      return
+    }
+    
     setIsSubmitting(true)
     setSubmitStatus(null)
 
@@ -26,7 +42,7 @@ export default function GetInTouchForm({ isOpen, onClose }) {
         name: name,
         email: email,
         message: message,
-        to_email: '14asifcr7@gmail.com',
+        to_email: OWNER_EMAIL,
         reply_to: email
       }
 

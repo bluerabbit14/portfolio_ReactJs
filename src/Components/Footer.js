@@ -108,7 +108,7 @@ export default function Footer({ onServiceClick, onShowGetInTouch }) {
                 {/* Brand */}
                  <div className="footer-brand">
                    <div className="footer-brand-text">
-                     DevApp
+                     Iris.Dev
                    </div>
                 </div> 
 

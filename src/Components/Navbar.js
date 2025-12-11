@@ -27,7 +27,7 @@ export default function Navbar({ isScrolling, onShowGetInTouch }) {
         {/* Portfolio Label - Left Side */}
         <div className="navbar-brand">
           <button onClick={() => scrollToSection('home')} className="brand-link">
-            DevApp
+            Iris.Dev
           </button>
         </div>
 

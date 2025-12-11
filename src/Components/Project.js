@@ -105,7 +105,7 @@ export default function Project({ onProjectClick }) {
             <div className="content-right">
               <div className="media-section">
                 <div className="project-image-1">
-                  <img src="/Assets/project4.webp" alt="Orama API" />
+                  <img src="/Assets/project3.webp" alt="Orama API" />
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function Project({ onProjectClick }) {
             <div className="content-left">
               <div className="media-section">
                 <div className="project-image-1">
-                  <img src="/Assets/project2.webp" alt="VM-Maui" />
+                  <img src="/Assets/project4.png" alt="VM-Maui" />
                 </div>
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function Project({ onProjectClick }) {
             <div className="content-right">
               <div className="media-section">
                 <div className="project-image-1">
-                  <img src="/Assets/project3.webp" alt="SOLI MAUI" />
+                  <img src="/Assets/project5.webp" alt="SOLI MAUI" />
                 </div>
               </div>
             </div>
