@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './About.css'
+import ScrollAnimation from './ScrollAnimation'
 
 export default function About({ onShowGetInTouch }) {
   const [showDownloadNotification, setShowDownloadNotification] = useState(false)
@@ -15,49 +16,65 @@ export default function About({ onShowGetInTouch }) {
       <div className="about-container">
         {/* Left Side - About Content */}
         <div className="about-content">
-          <div className="about-greeting">
-            <h2 className="about-title">
-              <span className="greeting-text">About</span> me<span className="name-text"></span>
-            </h2>
-          </div>
+          <ScrollAnimation direction="right" delay={0.1} duration={0.8}>
+            <div className="about-greeting">
+              <h2 className="about-title">
+                <span className="greeting-text">About</span> me<span className="name-text"></span>
+              </h2>
+            </div>
+          </ScrollAnimation>
           
-          <div className="about-role">
-            <div className="role-line"></div>
-            <span className="role-text">Mobile App Developer</span>
-          </div>
+          <ScrollAnimation direction="right" delay={0.2} duration={0.8}>
+            <div className="about-role">
+              <div className="role-line"></div>
+              <span className="role-text">Mobile App Developer</span>
+            </div>
+          </ScrollAnimation>
           
-          <p className="about-description">
-            Hi, I'm <strong>Asif Abbas</strong>, a passionate <strong>mobile app developer</strong> specializing in 
-            <strong> .NET MAUI</strong>, <strong>Flutter</strong>, and <strong>ASP.NET API</strong> development. 
-            I focus on developing cross-platform mobile applications using <strong>.NET MAUI</strong> with an emphasis on 
-            <strong> clean architecture</strong>, <strong>performance</strong>, and <strong>scalability</strong>. 
-            I integrate <strong>ASP.NET Core Web APIs</strong> and <strong>Firebase</strong> for secure backend services, 
-            including <strong>authentication</strong>, <strong>real-time data</strong>, and <strong>cloud hosting</strong>. 
-            Skilled in building responsive UI with <strong>React.js</strong> and delivering optimized, production-ready applications.
-            <br /> <br />
-            Actively involved in the full <strong>SDLC</strong>: planning, development, testing, deployment, and optimization. 
-            Whether you're launching a startup or scaling a product, I'm here to help bring your vision to life.
-          </p>
+          <ScrollAnimation direction="right" delay={0.3} duration={0.8}>
+            <p className="about-description">
+              Hi, I'm <strong>Asif Abbas</strong>, a passionate <strong>mobile app developer</strong> specializing in 
+              <strong> .NET MAUI</strong>, <strong>Flutter</strong>, and <strong>ASP.NET API</strong> development. 
+              I focus on developing cross-platform mobile applications using <strong>.NET MAUI</strong> with an emphasis on 
+              <strong> clean architecture</strong>, <strong>performance</strong>, and <strong>scalability</strong>. 
+              I integrate <strong>ASP.NET Core Web APIs</strong> and <strong>Firebase</strong> for secure backend services, 
+              including <strong>authentication</strong>, <strong>real-time data</strong>, and <strong>cloud hosting</strong>. 
+              Skilled in building responsive UI with <strong>React.js</strong> and delivering optimized, production-ready applications.
+              <br /> <br />
+              Actively involved in the full <strong>SDLC</strong>: planning, development, testing, deployment, and optimization. 
+              Whether you're launching a startup or scaling a product, I'm here to help bring your vision to life.
+            </p>
+          </ScrollAnimation>
           
           {/* Stats Section */}
-          <div className="about-stats">
-            <div className="stats-item">
-              <div className="stats-number">9</div>
-              <div className="stats-label">Completed<br />Projects</div>
+          <ScrollAnimation direction="right" delay={0.4} duration={0.8}>
+            <div className="about-stats">
+              <ScrollAnimation direction="up" delay={0.5} duration={0.6}>
+                <div className="stats-item">
+                  <div className="stats-number">9</div>
+                  <div className="stats-label">Completed<br />Projects</div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation direction="up" delay={0.6} duration={0.6}>
+                <div className="stats-item">
+                  <div className="stats-number">9+</div>
+                  <div className="stats-label">Months in<br />Development</div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation direction="up" delay={0.7} duration={0.6}>
+                <div className="stats-item">
+                  <div className="stats-number">13+</div>
+                  <div className="stats-label">Technology<br />Used</div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation direction="up" delay={0.8} duration={0.6}>
+                <div className="stats-item">
+                  <div className="stats-number">3</div>
+                  <div className="stats-label">Projects<br />In Production</div>
+                </div>
+              </ScrollAnimation>
             </div>
-            <div className="stats-item">
-              <div className="stats-number">9+</div>
-              <div className="stats-label">Months in<br />Development</div>
-            </div>
-            <div className="stats-item">
-              <div className="stats-number">13+</div>
-              <div className="stats-label">Technology<br />Used</div>
-            </div>
-            <div className="stats-item">
-              <div className="stats-number">3</div>
-              <div className="stats-label">Projects<br />In Production</div>
-            </div>
-          </div>
+          </ScrollAnimation>
           
           
           {/* Call to Action Buttons */}
@@ -68,12 +85,14 @@ export default function About({ onShowGetInTouch }) {
         </div>
         
         {/* Right Side - Visual Content */}
-        <div className="about-visual">
-          <div className="about-image-container">
-            <img src="/Assets/asifimage.JPG" alt="Asif" className="about-image" />
-          
+        <ScrollAnimation direction="left" delay={0.3} duration={0.8}>
+          <div className="about-visual">
+            <div className="about-image-container">
+              <img src="/Assets/asifimage.JPG" alt="Asif" className="about-image" />
+            
+            </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
       
       {/* Download Success Notification */}

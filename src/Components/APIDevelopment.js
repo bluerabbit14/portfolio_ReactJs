@@ -1,5 +1,6 @@
 import React from 'react'
 import './APIDevelopment.css'
+import ScrollAnimation from './ScrollAnimation'
 
 export default function APIDevelopment({ onBack }) {
   const handleBackClick = () => {
@@ -22,11 +23,14 @@ export default function APIDevelopment({ onBack }) {
 
       {/* Hero Section */}
       <div className="api-development-hero">
-        <div className="service-icon">🔌</div>
-        <h1 className="service-title">API Development</h1>
-        <p className="service-description">Building robust, scalable, and secure APIs that power modern applications and enable seamless data integration.</p>
+        <ScrollAnimation direction="up" delay={0.1} duration={0.8}>
+          <div className="service-icon">🔌</div>
+          <h1 className="service-title">API Development</h1>
+          <p className="service-description">Building robust, scalable, and secure APIs that power modern applications and enable seamless data integration.</p>
+        </ScrollAnimation>
         
-        <div className="service-overview">
+        <ScrollAnimation direction="up" delay={0.2} duration={0.8}>
+          <div className="service-overview">
           <h2>Service Overview</h2>
           <div className="service-text">
             <p>API development is the backbone of modern software architecture. I create RESTful APIs, GraphQL endpoints, and microservices that enable seamless communication between different systems and applications.</p>
@@ -38,8 +42,10 @@ export default function APIDevelopment({ onBack }) {
             <p>From simple CRUD operations to complex business logic and third-party integrations, I build APIs that can handle high traffic loads while maintaining optimal performance. I also provide ongoing monitoring, maintenance, and updates to keep your APIs current and secure.</p>
           </div>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-technologies">
+        <ScrollAnimation direction="up" delay={0.3} duration={0.8}>
+          <div className="service-technologies">
           <h2>Technologies Used</h2>
           <div className="technologies-grid">
             <span className="tech-tag">ASP.NET Core</span>
@@ -54,8 +60,10 @@ export default function APIDevelopment({ onBack }) {
             <span className="tech-tag">Swagger</span>
           </div>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-features">
+        <ScrollAnimation direction="up" delay={0.4} duration={0.8}>
+          <div className="service-features">
           <h2>Key Features</h2>
           <ul className="features-list">
             <li>RESTful API design and development</li>
@@ -68,8 +76,10 @@ export default function APIDevelopment({ onBack }) {
             <li>Performance monitoring</li>
           </ul>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-process">
+        <ScrollAnimation direction="up" delay={0.5} duration={0.8}>
+          <div className="service-process">
           <h2>Our Process</h2>
           <ul className="process-list">
             <li>
@@ -98,30 +108,37 @@ export default function APIDevelopment({ onBack }) {
             </li>
           </ul>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-projects">
-          <h2>Recent API Projects</h2>
-          <div className="projects-grid">
-            <div className="project-card">
-              <h3>Orama API</h3>
-              <p>Scalable backend service with secure user registration, JWT authentication, and role-based authorization.</p>
-              <div className="project-tech">
-                <span className="tech-badge">ASP.NET Core</span>
-                <span className="tech-badge">C#</span>
-                <span className="tech-badge">SQL Server</span>
-              </div>
-            </div>
-            <div className="project-card">
-              <h3>Investment Portfolio API</h3>
-              <p>RESTful API for managing investment portfolios with real-time data synchronization and analytics.</p>
-              <div className="project-tech">
-                <span className="tech-badge">Node.js</span>
-                <span className="tech-badge">PostgreSQL</span>
-                <span className="tech-badge">JWT</span>
-              </div>
+        <ScrollAnimation direction="up" delay={0.6} duration={0.8}>
+          <div className="service-projects">
+            <h2>Recent API Projects</h2>
+            <div className="projects-grid">
+              <ScrollAnimation direction="right" delay={0.7} duration={0.8}>
+                <div className="project-card">
+                  <h3>Orama API</h3>
+                  <p>Scalable backend service with secure user registration, JWT authentication, and role-based authorization.</p>
+                  <div className="project-tech">
+                    <span className="tech-badge">ASP.NET Core</span>
+                    <span className="tech-badge">C#</span>
+                    <span className="tech-badge">SQL Server</span>
+                  </div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation direction="left" delay={0.8} duration={0.8}>
+                <div className="project-card">
+                  <h3>Investment Portfolio API</h3>
+                  <p>RESTful API for managing investment portfolios with real-time data synchronization and analytics.</p>
+                  <div className="project-tech">
+                    <span className="tech-badge">Node.js</span>
+                    <span className="tech-badge">PostgreSQL</span>
+                    <span className="tech-badge">JWT</span>
+                  </div>
+                </div>
+              </ScrollAnimation>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </div>
   )

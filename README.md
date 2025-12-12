@@ -13,7 +13,8 @@ A modern, responsive portfolio website built with React 19, designed to showcase
 - **Responsive Design**: Fully responsive layout optimized for desktop, tablet, and mobile devices
 
 ### UI/UX Features
-- **Smooth Animations**: Framer Motion animations for enhanced user experience
+- **Scroll-to-View Animations**: Smooth Framer Motion animations that trigger when elements enter the viewport
+- **Individual Element Animations**: Each section and component animates independently with customizable directions and delays
 - **Scroll Detection**: Dynamic navbar that responds to scroll behavior
 - **Modern Design**: Clean, professional design with smooth transitions
 - **Accessibility**: Optimized for screen readers and keyboard navigation
@@ -39,7 +40,8 @@ A modern, responsive portfolio website built with React 19, designed to showcase
 - **React Redux** 9.2.0 - React bindings for Redux
 
 ### UI & Animation
-- **Framer Motion** 12.23.13 - Animation library for smooth transitions
+- **Framer Motion** 12.23.13 - Animation library for smooth scroll-to-view animations
+- **ScrollAnimation Component** - Custom reusable animation wrapper for consistent scroll animations
 - **CSS3** - Custom styling with responsive design
 
 ### Services & Integration
@@ -68,6 +70,7 @@ Iris_ReactJs/
 │   │   ├── PrivacyPolicy.js  # Privacy Policy page
 │   │   ├── Project.js     # Projects showcase
 │   │   ├── ProjectDetail.js  # Project detail page
+│   │   ├── ScrollAnimation.js  # Reusable scroll-to-view animation wrapper
 │   │   ├── SpecialistStack.js  # Skills/stack component
 │   │   ├── TermsOfUse.js  # Terms of Use page
 │   │   ├── Testimonial.js # Testimonials component
@@ -175,6 +178,17 @@ For deployment troubleshooting, see [VERCEL_DEPLOYMENT_FIX.md](./VERCEL_DEPLOYME
 
 ## 🎨 Key Features Explained
 
+### Scroll-to-View Animations
+- **ScrollAnimation Component**: Reusable wrapper component built with Framer Motion
+- **Animation Directions**: Supports `up`, `down`, `left`, `right`, `fade`, and `scale` animations
+- **Customizable Properties**: 
+  - Delay: Stagger animations for sequential reveals
+  - Duration: Control animation speed (default: 0.6s)
+  - Distance: Control animation distance (default: 50px)
+- **Viewport Detection**: Animations trigger when elements are 100px before entering viewport
+- **Performance Optimized**: Uses `viewport={{ once: true }}` to animate each element only once
+- **Applied Throughout**: All major sections (Hero, About, Projects, Footer, Service Pages) feature smooth scroll animations
+
 ### Navigation System
 - Single-page application with view state management
 - Smooth transitions between home, project details, and service pages
@@ -253,6 +267,56 @@ REACT_APP_OWNER_EMAIL=your_email@example.com
 **Framework**: React 19  
 **Build Tool**: Create React App  
 **Deployment**: Vercel
+
+## 🎬 Animation Features
+
+### ScrollAnimation Component Usage
+
+The `ScrollAnimation` component provides a simple way to add scroll-triggered animations to any element:
+
+```jsx
+import ScrollAnimation from './Components/ScrollAnimation'
+
+<ScrollAnimation direction="up" delay={0.2} duration={0.8}>
+  <div>Your content here</div>
+</ScrollAnimation>
+```
+
+### Available Props
+
+- `direction` (string): Animation direction - `'up'`, `'down'`, `'left'`, `'right'`, `'fade'`, `'scale'` (default: `'up'`)
+- `delay` (number): Animation delay in seconds (default: `0`)
+- `duration` (number): Animation duration in seconds (default: `0.6`)
+- `distance` (number): Distance to animate from in pixels (default: `50`)
+- `className` (string): Additional CSS classes
+
+### Animation Examples
+
+```jsx
+// Fade in animation
+<ScrollAnimation direction="fade" delay={0.1}>
+  <h1>Title</h1>
+</ScrollAnimation>
+
+// Slide up from bottom
+<ScrollAnimation direction="up" delay={0.2} duration={0.8}>
+  <p>Content</p>
+</ScrollAnimation>
+
+// Scale animation
+<ScrollAnimation direction="scale" delay={0.3}>
+  <img src="image.jpg" alt="Image" />
+</ScrollAnimation>
+```
+
+### Where Animations Are Applied
+
+- **Hero Section**: Title, subtitle, buttons, video section with staggered delays
+- **About Section**: Content slides from right, image from left, stats with individual animations
+- **Projects Section**: Header and each project card animate individually with alternating directions
+- **Footer**: All columns animate up with staggered delays
+- **Service Pages**: All sections (overview, technologies, features, process, projects) animate on scroll
+- **SpecialistStack**: Skill icons animate with scale effect and staggered delays
 
 ---
 

@@ -114,7 +114,7 @@ export default function GetInTouchForm({ isOpen, onClose }) {
         <div className="modal-header">
           <div className="profile-section">
             <div className="profile-photo">
-              <img src="/Assets/asifimage.jpg" alt="Asif" />
+              <img src="/Assets/asifimage.JPG" alt="Asif" />
             </div>
             <div className="profile-info">
               <h2 className="modal-title">Connect with Asif</h2>

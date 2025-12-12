@@ -1,5 +1,6 @@
 import React from 'react'
 import './AIBot.css'
+import ScrollAnimation from './ScrollAnimation'
 
 export default function AIBot({ onBack }) {
   const handleBackClick = () => {
@@ -22,11 +23,14 @@ export default function AIBot({ onBack }) {
 
       {/* Hero Section */}
       <div className="ai-bot-hero">
-        <div className="service-icon">🤖</div>
-        <h1 className="service-title">AI Bot Development</h1>
-        <p className="service-description">Creating intelligent chatbots and AI-powered solutions that enhance user engagement and automate business processes.</p>
+        <ScrollAnimation direction="up" delay={0.1} duration={0.8}>
+          <div className="service-icon">🤖</div>
+          <h1 className="service-title">AI Bot Development</h1>
+          <p className="service-description">Creating intelligent chatbots and AI-powered solutions that enhance user engagement and automate business processes.</p>
+        </ScrollAnimation>
         
-        <div className="service-overview">
+        <ScrollAnimation direction="up" delay={0.2} duration={0.8}>
+          <div className="service-overview">
           <h2>Service Overview</h2>
           <div className="service-text">
             <p>AI bot development represents the future of customer interaction and business automation. I create intelligent chatbots and AI-powered solutions that can understand natural language, provide instant responses, and learn from user interactions.</p>
@@ -38,8 +42,10 @@ export default function AIBot({ onBack }) {
             <p>From simple FAQ bots to complex conversational AI systems, I create solutions that improve user experience while reducing operational costs. I also provide analytics and monitoring to track bot performance and user satisfaction.</p>
           </div>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-technologies">
+        <ScrollAnimation direction="up" delay={0.3} duration={0.8}>
+          <div className="service-technologies">
           <h2>Technologies Used</h2>
           <div className="technologies-grid">
             <span className="tech-tag">OpenAI GPT</span>
@@ -52,8 +58,10 @@ export default function AIBot({ onBack }) {
             <span className="tech-tag">TensorFlow</span>
           </div>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-features">
+        <ScrollAnimation direction="up" delay={0.4} duration={0.8}>
+          <div className="service-features">
           <h2>Key Features</h2>
           <ul className="features-list">
             <li>Natural language processing</li>
@@ -66,8 +74,10 @@ export default function AIBot({ onBack }) {
             <li>Scalable deployment</li>
           </ul>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-process">
+        <ScrollAnimation direction="up" delay={0.5} duration={0.8}>
+          <div className="service-process">
           <h2>Our Process</h2>
           <ul className="process-list">
             <li>
@@ -96,30 +106,37 @@ export default function AIBot({ onBack }) {
             </li>
           </ul>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-projects">
-          <h2>Recent AI Bot Projects</h2>
-          <div className="projects-grid">
-            <div className="project-card">
-              <h3>Gemini AI Chat</h3>
-              <p>Modern, interactive web application with real-time AI conversations powered by Google's Gemini model.</p>
-              <div className="project-tech">
-                <span className="tech-badge">Google Gemini</span>
-                <span className="tech-badge">JavaScript</span>
-                <span className="tech-badge">OpenRouter API</span>
-              </div>
-            </div>
-            <div className="project-card">
-              <h3>Customer Support Bot</h3>
-              <p>Intelligent chatbot for handling customer inquiries with natural language understanding and context awareness.</p>
-              <div className="project-tech">
-                <span className="tech-badge">OpenAI GPT</span>
-                <span className="tech-badge">Python</span>
-                <span className="tech-badge">NLP</span>
-              </div>
+        <ScrollAnimation direction="up" delay={0.6} duration={0.8}>
+          <div className="service-projects">
+            <h2>Recent AI Bot Projects</h2>
+            <div className="projects-grid">
+              <ScrollAnimation direction="right" delay={0.7} duration={0.8}>
+                <div className="project-card">
+                  <h3>Gemini AI Chat</h3>
+                  <p>Modern, interactive web application with real-time AI conversations powered by Google's Gemini model.</p>
+                  <div className="project-tech">
+                    <span className="tech-badge">Google Gemini</span>
+                    <span className="tech-badge">JavaScript</span>
+                    <span className="tech-badge">OpenRouter API</span>
+                  </div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation direction="left" delay={0.8} duration={0.8}>
+                <div className="project-card">
+                  <h3>Customer Support Bot</h3>
+                  <p>Intelligent chatbot for handling customer inquiries with natural language understanding and context awareness.</p>
+                  <div className="project-tech">
+                    <span className="tech-badge">OpenAI GPT</span>
+                    <span className="tech-badge">Python</span>
+                    <span className="tech-badge">NLP</span>
+                  </div>
+                </div>
+              </ScrollAnimation>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </div>
   )

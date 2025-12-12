@@ -1,5 +1,6 @@
 import React from 'react'
 import './Project.css'
+import ScrollAnimation from './ScrollAnimation'
 
 export default function Project({ onProjectClick }) {
   const handleReadMore = (projectId) => {
@@ -11,19 +12,21 @@ export default function Project({ onProjectClick }) {
   return (
     <section id="projects" className="project">
       {/* Header Section */}
-      <div className="project-header">
-        <div className="project-pattern">
-          <div className="pattern-dots"></div>
+      <ScrollAnimation direction="up" delay={0.1} duration={0.8}>
+        <div className="project-header">
+          <div className="project-pattern">
+            <div className="pattern-dots"></div>
+          </div>
+          
+          <div className="project-title-section">
+          
+            <h1 className="project-main-title">PROJECTS</h1>
+            <p className="project-description">
+            A diverse portfolio showcasing cross-platform mobile applications, web applications, AI-powered solutions, and robust backend APIs. Built with modern technologies including Flutter, .NET MAUI, React, ASP.NET Core, and various cloud services to deliver scalable and performant solutions.
+            </p>
+          </div>
         </div>
-        
-        <div className="project-title-section">
-        
-          <h1 className="project-main-title">PROJECTS</h1>
-          <p className="project-description">
-          A diverse portfolio showcasing cross-platform mobile applications, web applications, AI-powered solutions, and robust backend APIs. Built with modern technologies including Flutter, .NET MAUI, React, ASP.NET Core, and various cloud services to deliver scalable and performant solutions.
-          </p>
-        </div>
-      </div>
+      </ScrollAnimation>
 
       {/* Projects Grid */}
       <div className="projects-container">
@@ -53,7 +56,8 @@ export default function Project({ onProjectClick }) {
         
 
         {/* Project 2 - Investorly MAUI */}
-          <div className="card-content card-content-reverse">
+          <ScrollAnimation direction="left" delay={0.2} duration={0.8}>
+            <div className="card-content card-content-reverse">
             <div className="content-right">
               <div className="media-section">
                 <div className="project-image-1">
@@ -75,9 +79,11 @@ export default function Project({ onProjectClick }) {
               <button className="cta-button" onClick={() => handleReadMore('investorly-maui')}>Read More</button>
             </div>
           </div>
+          </ScrollAnimation>
 
         {/* Project 3 - MultiModel.ai */}
-          <div className="card-content">
+          <ScrollAnimation direction="right" delay={0.3} duration={0.8}>
+            <div className="card-content">
             <div className="content-left">
               <div className="media-section">
                 <div className="project-image-1">
@@ -99,9 +105,11 @@ export default function Project({ onProjectClick }) {
               <button className="cta-button" onClick={() => handleReadMore('multimodel-ai')}>Read More</button>
             </div>
           </div>
+          </ScrollAnimation>
 
         {/* Project 4 - Orama API */}
-          <div className="card-content card-content-reverse">
+          <ScrollAnimation direction="left" delay={0.4} duration={0.8}>
+            <div className="card-content card-content-reverse">
             <div className="content-right">
               <div className="media-section">
                 <div className="project-image-1">
@@ -123,9 +131,11 @@ export default function Project({ onProjectClick }) {
               <button className="cta-button" onClick={() => handleReadMore('orama-api')}>Read More</button>
             </div>
           </div>
+          </ScrollAnimation>
 
           {/* Project 5 - VM-Maui */}
-          <div className="card-content">
+          <ScrollAnimation direction="right" delay={0.5} duration={0.8}>
+            <div className="card-content">
             <div className="content-left">
               <div className="media-section">
                 <div className="project-image-1">
@@ -147,9 +157,11 @@ export default function Project({ onProjectClick }) {
               <button className="cta-button" onClick={() => handleReadMore('vm-maui')}>Read More</button>
             </div>
           </div>
+          </ScrollAnimation>
 
         {/* Project 6 - SOLI MAUI */}
-          <div className="card-content card-content-reverse">
+          <ScrollAnimation direction="left" delay={0.6} duration={0.8}>
+            <div className="card-content card-content-reverse">
             <div className="content-right">
               <div className="media-section">
                 <div className="project-image-1">
@@ -171,6 +183,7 @@ export default function Project({ onProjectClick }) {
               <button className="cta-button" onClick={() => handleReadMore('soli-maui')}>Read More</button>
             </div>
           </div>
+          </ScrollAnimation>
 
           {/* Project 7 - Orama MAUI */}
           {/* <div className="card-content">

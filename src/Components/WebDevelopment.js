@@ -1,5 +1,6 @@
 import React from 'react'
 import './WebDevelopment.css'
+import ScrollAnimation from './ScrollAnimation'
 
 export default function WebDevelopment({ onBack }) {
   const handleBackClick = () => {
@@ -22,11 +23,14 @@ export default function WebDevelopment({ onBack }) {
 
       {/* Hero Section */}
       <div className="web-development-hero">
-        <div className="service-icon">🌐</div>
-        <h1 className="service-title">Web Development</h1>
-        <p className="service-description">Building responsive, fast, and scalable web applications using modern frameworks and best practices.</p>
+        <ScrollAnimation direction="up" delay={0.1} duration={0.8}>
+          <div className="service-icon">🌐</div>
+          <h1 className="service-title">Web Development</h1>
+          <p className="service-description">Building responsive, fast, and scalable web applications using modern frameworks and best practices.</p>
+        </ScrollAnimation>
         
-        <div className="service-overview">
+        <ScrollAnimation direction="up" delay={0.2} duration={0.8}>
+          <div className="service-overview">
           <h2>Service Overview</h2>
           <div className="service-text">
             <p>Web development is the foundation of digital presence in today's connected world. I create modern, responsive web applications that deliver exceptional user experiences across all devices and browsers.</p>
@@ -38,8 +42,10 @@ export default function WebDevelopment({ onBack }) {
             <p>From simple landing pages to complex e-commerce platforms and enterprise applications, I deliver solutions that are not only visually appealing but also highly functional, secure, and maintainable. My development process includes thorough testing, performance optimization, and ongoing support.</p>
           </div>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-technologies">
+        <ScrollAnimation direction="up" delay={0.3} duration={0.8}>
+          <div className="service-technologies">
           <h2>Technologies Used</h2>
           <div className="technologies-grid">
             <span className="tech-tag">React</span>
@@ -54,8 +60,10 @@ export default function WebDevelopment({ onBack }) {
             <span className="tech-tag">Tailwind CSS</span>
           </div>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-features">
+        <ScrollAnimation direction="up" delay={0.4} duration={0.8}>
+          <div className="service-features">
           <h2>Key Features</h2>
           <ul className="features-list">
             <li>Responsive design for all devices</li>
@@ -68,8 +76,10 @@ export default function WebDevelopment({ onBack }) {
             <li>Content management systems</li>
           </ul>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-process">
+        <ScrollAnimation direction="up" delay={0.5} duration={0.8}>
+          <div className="service-process">
           <h2>Our Process</h2>
           <ul className="process-list">
             <li>
@@ -98,30 +108,37 @@ export default function WebDevelopment({ onBack }) {
             </li>
           </ul>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-projects">
-          <h2>Recent Web Projects</h2>
-          <div className="projects-grid">
-            <div className="project-card">
-              <h3>Investorly Web Platform</h3>
-              <p>Comprehensive web-based investment portfolio management with real-time data synchronization and advanced analytics.</p>
-              <div className="project-tech">
-                <span className="tech-badge">React</span>
-                <span className="tech-badge">ASP.NET Core</span>
-                <span className="tech-badge">PostgreSQL</span>
-              </div>
-            </div>
-            <div className="project-card">
-              <h3>Gemini AI Chat</h3>
-              <p>Modern, interactive web application with real-time AI conversations and responsive design.</p>
-              <div className="project-tech">
-                <span className="tech-badge">HTML5</span>
-                <span className="tech-badge">CSS3</span>
-                <span className="tech-badge">JavaScript</span>
-              </div>
+        <ScrollAnimation direction="up" delay={0.6} duration={0.8}>
+          <div className="service-projects">
+            <h2>Recent Web Projects</h2>
+            <div className="projects-grid">
+              <ScrollAnimation direction="right" delay={0.7} duration={0.8}>
+                <div className="project-card">
+                  <h3>Investorly Web Platform</h3>
+                  <p>Comprehensive web-based investment portfolio management with real-time data synchronization and advanced analytics.</p>
+                  <div className="project-tech">
+                    <span className="tech-badge">React</span>
+                    <span className="tech-badge">ASP.NET Core</span>
+                    <span className="tech-badge">PostgreSQL</span>
+                  </div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation direction="left" delay={0.8} duration={0.8}>
+                <div className="project-card">
+                  <h3>Gemini AI Chat</h3>
+                  <p>Modern, interactive web application with real-time AI conversations and responsive design.</p>
+                  <div className="project-tech">
+                    <span className="tech-badge">HTML5</span>
+                    <span className="tech-badge">CSS3</span>
+                    <span className="tech-badge">JavaScript</span>
+                  </div>
+                </div>
+              </ScrollAnimation>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import './UIUXDesign.css'
+import ScrollAnimation from './ScrollAnimation'
 
 export default function UIUXDesign({ onBack }) {
   const handleBackClick = () => {
@@ -22,11 +23,14 @@ export default function UIUXDesign({ onBack }) {
 
       {/* Hero Section */}
       <div className="ui-ux-design-hero">
-        <div className="service-icon">🎨</div>
-        <h1 className="service-title">UI/UX Design</h1>
-        <p className="service-description">Creating intuitive, beautiful, and user-centered designs that enhance user experience and drive engagement.</p>
+        <ScrollAnimation direction="up" delay={0.1} duration={0.8}>
+          <div className="service-icon">🎨</div>
+          <h1 className="service-title">UI/UX Design</h1>
+          <p className="service-description">Creating intuitive, beautiful, and user-centered designs that enhance user experience and drive engagement.</p>
+        </ScrollAnimation>
         
-        <div className="service-overview">
+        <ScrollAnimation direction="up" delay={0.2} duration={0.8}>
+          <div className="service-overview">
           <h2>Service Overview</h2>
           <div className="service-text">
             <p>UI/UX design is about creating digital experiences that users love. I combine creativity with user research and design principles to create interfaces that are not only beautiful but also highly functional and intuitive.</p>
@@ -38,8 +42,10 @@ export default function UIUXDesign({ onBack }) {
             <p>From mobile apps to web applications, I ensure that every interface is consistent with your brand identity while providing an exceptional user experience. I also provide design systems and style guides to maintain consistency across all touchpoints.</p>
           </div>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-technologies">
+        <ScrollAnimation direction="up" delay={0.3} duration={0.8}>
+          <div className="service-technologies">
           <h2>Technologies Used</h2>
           <div className="technologies-grid">
             <span className="tech-tag">Figma</span>
@@ -52,8 +58,10 @@ export default function UIUXDesign({ onBack }) {
             <span className="tech-tag">Zeplin</span>
           </div>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-features">
+        <ScrollAnimation direction="up" delay={0.4} duration={0.8}>
+          <div className="service-features">
           <h2>Key Features</h2>
           <ul className="features-list">
             <li>User research and persona development</li>
@@ -66,8 +74,10 @@ export default function UIUXDesign({ onBack }) {
             <li>Brand identity integration</li>
           </ul>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-process">
+        <ScrollAnimation direction="up" delay={0.5} duration={0.8}>
+          <div className="service-process">
           <h2>Our Process</h2>
           <ul className="process-list">
             <li>
@@ -96,30 +106,37 @@ export default function UIUXDesign({ onBack }) {
             </li>
           </ul>
         </div>
+        </ScrollAnimation>
 
-        <div className="service-projects">
-          <h2>Recent Design Projects</h2>
-          <div className="projects-grid">
-            <div className="project-card">
-              <h3>Investorly Mobile App UI</h3>
-              <p>Complete UI/UX design for investment tracking mobile application with intuitive data visualization and user-friendly interface.</p>
-              <div className="project-tech">
-                <span className="tech-badge">Figma</span>
-                <span className="tech-badge">Principle</span>
-                <span className="tech-badge">User Research</span>
-              </div>
-            </div>
-            <div className="project-card">
-              <h3>Web Platform Design System</h3>
-              <p>Comprehensive design system and component library for web applications ensuring consistency and scalability.</p>
-              <div className="project-tech">
-                <span className="tech-badge">Figma</span>
-                <span className="tech-badge">Design System</span>
-                <span className="tech-badge">Components</span>
-              </div>
+        <ScrollAnimation direction="up" delay={0.6} duration={0.8}>
+          <div className="service-projects">
+            <h2>Recent Design Projects</h2>
+            <div className="projects-grid">
+              <ScrollAnimation direction="right" delay={0.7} duration={0.8}>
+                <div className="project-card">
+                  <h3>Investorly Mobile App UI</h3>
+                  <p>Complete UI/UX design for investment tracking mobile application with intuitive data visualization and user-friendly interface.</p>
+                  <div className="project-tech">
+                    <span className="tech-badge">Figma</span>
+                    <span className="tech-badge">Principle</span>
+                    <span className="tech-badge">User Research</span>
+                  </div>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation direction="left" delay={0.8} duration={0.8}>
+                <div className="project-card">
+                  <h3>Web Platform Design System</h3>
+                  <p>Comprehensive design system and component library for web applications ensuring consistency and scalability.</p>
+                  <div className="project-tech">
+                    <span className="tech-badge">Figma</span>
+                    <span className="tech-badge">Design System</span>
+                    <span className="tech-badge">Components</span>
+                  </div>
+                </div>
+              </ScrollAnimation>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </div>
   )

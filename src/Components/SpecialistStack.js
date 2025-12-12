@@ -1,5 +1,6 @@
 import React from 'react'
 import './SpecialistStack.css'
+import ScrollAnimation from './ScrollAnimation'
 
 export default function SpecialistStack() {
   const specialistSkills = [
@@ -50,16 +51,23 @@ export default function SpecialistStack() {
       <div className="specialist-stack-content">
     
         <div className="skills-horizontal-strip">
-          {specialistSkills.map((skill) => (
-            <div key={skill.id} className="skill-item">
-              <div className="skill-icon-container">
-                <img 
-                  src={skill.icon} 
-                  alt={skill.name}
-                  className="skill-icon"
-                />
+          {specialistSkills.map((skill, index) => (
+            <ScrollAnimation 
+              key={skill.id} 
+              direction="scale" 
+              delay={index * 0.1} 
+              duration={0.6}
+            >
+              <div className="skill-item">
+                <div className="skill-icon-container">
+                  <img 
+                    src={skill.icon} 
+                    alt={skill.name}
+                    className="skill-icon"
+                  />
+                </div>
               </div>
-            </div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

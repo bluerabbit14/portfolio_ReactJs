@@ -3,9 +3,14 @@
   "name": "Asif Abbas - Full Stack Developer Portfolio",
   "icons": [
     {
-      "src": "Assets/asifimage.JPG",
+      "src": "Assets/officer.png",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png"
+    },
+    {
+      "src": "Assets/officer.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": ".",

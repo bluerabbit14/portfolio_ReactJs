@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import './Hero.css'
 import SpecialistStack from './SpecialistStack'
+import ScrollAnimation from './ScrollAnimation'
 
 export default function Hero({ onShowGetInTouch }) {
   const videoRef = useRef(null)
@@ -57,20 +58,29 @@ export default function Hero({ onShowGetInTouch }) {
       <div className="hero-container">
         {/* Left Side - Hero Content */}
         <div className="hero-content">
-          <h2 className="hero-title">Building Modern Mobile Apps That Deliver</h2>
-          <p className="hero-subtitle">Expert in cross-platform development using .NET MAUI & React.
-          I design sleek UIs, craft powerful APIs, and launch scalable mobile apps.</p>
+          <ScrollAnimation direction="up" delay={0.1} duration={0.8}>
+            <h2 className="hero-title">Building Modern Mobile Apps That Deliver</h2>
+          </ScrollAnimation>
+          <ScrollAnimation direction="up" delay={0.2} duration={0.8}>
+            <p className="hero-subtitle">Expert in cross-platform development using .NET MAUI & React.
+            I design sleek UIs, craft powerful APIs, and launch scalable mobile apps.</p>
+          </ScrollAnimation>
           
           {/* Call to Action Buttons */}
-          <div className="hero-buttons">
-            <button onClick={scrollToProjects} className="hero-btn outline">View Work</button>
-            <a href="/Assets/ASIF ABBAS RESUME.pdf" download="Asif Abbas Resume.pdf" onClick={handleDownload} className="hero-btn filled">Resume</a>
-          </div>
+          <ScrollAnimation direction="up" delay={0.3} duration={0.8}>
+            <div className="hero-buttons">
+              <button onClick={scrollToProjects} className="hero-btn outline">View Work</button>
+              <a href="/Assets/ASIF ABBAS RESUME.pdf" download="Asif Abbas Resume.pdf" onClick={handleDownload} className="hero-btn filled">Resume</a>
+            </div>
+          </ScrollAnimation>
 
-          <SpecialistStack />
+          <ScrollAnimation direction="up" delay={0.4} duration={0.8}>
+            <SpecialistStack />
+          </ScrollAnimation>
           
           {/* Video Section */}
-          <div className="hero-video-section">
+          <ScrollAnimation direction="up" delay={0.5} duration={0.8}>
+            <div className="hero-video-section">
             <div className="hero-video-container">
               <video 
                 ref={videoRef}
@@ -115,6 +125,7 @@ export default function Hero({ onShowGetInTouch }) {
               
             </div>
           </div>
+          </ScrollAnimation>
         </div>
         
       </div>
